@@ -1,0 +1,50 @@
+.head {
+  .title {
+    h1 {
+      font-size: 14px;
+      font-weight: 500;
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+    }
+    img {
+      margin: 0 10px;
+    }
+  }
+  i {
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #669cf6;
+}
+::ng-deep .mat-slide-toggle-content {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #2d62ed;
+}
+//   .mat-tab-body-content.ng-tns-c128-17.ng-trigger.ng-trigger-translateTab {
+//   text-align: center;
+// }
+.example-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px 0;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 576px) {
+  .example-form {
+    gap: 0;
+  }
+}
+md-tab-group {
+  height: 100%;
+}

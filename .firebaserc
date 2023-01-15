@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fuel-system-dc382": {
+      "hosting": {
+        "fuel-system": [
+          "fuel-system-dc382"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fuel-system-dc382"
+  }
+}

@@ -1,0 +1,63 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+$med: 767px;
+// .main {
+//   position: absolute;
+//   left: 100px;
+//   width: calc(100% - 100px);
+// }
+// app-header {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 99;
+// }
+// .main {
+//   position: absolute;
+//   top: 4rem;
+//   // width: 100%;
+//   z-index: 1;
+// }
+// app-sidenav {
+//   position: fixed;
+//   left: 0;
+//   // border: 1px solid black;
+//   width: 55px;
+//   height: calc(100vWh - 4rem);
+//   box-shadow: 0 0 10px #2d62ed;
+//   background-color: #2d62ed;
+//   white-space: nowrap;
+//   transition: 0.3s;
+//   overflow-x: hidden;
+// }
+// .nav-list-open-status {
+//   width: 180px;
+// }
+
+// .main-content {
+//   position: absolute;
+//   left: 55px;
+//   width: calc(100% - 5px);
+//   transition: 0.3s;
+// }
+
+// .main-content-shrink {
+//   width: calc(100% - 180px);
+//   left: 180px;
+// }
+mat-drawer-container {
+  height: 100%;
+
+  mat-drawer {
+    width: 190px;
+    background-color: #2d62ed;
+  }
+}
+.main-content {
+  background-color: #f4f7fe;
+  // height: calc(100vh - 64px);
+}
+// @media screen and(max-width:$med) {
+//   mat-drawer{
+
+//   }
+// }

@@ -1,0 +1,135 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  multiTemplateDataRows
+  style="width: 100%; overflow: scroll"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element; let i = dataIndex">
+      <i class="material-icons" style="cursor: pointer">keyboard_arrow_down</i>
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Output Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef>Output Type</th>
+    <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="lastChange">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <div
+        class="balls"
+        style="margin-right: 50px; display: flex; justify-content: space-evenly"
+      >
+        <div class="ball"></div>
+        <div class="ball" style="background-color: #ca4e82"></div>
+        <div class="ball" style="background-color: #634f8d"></div>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastTime">
+    <th mat-header-cell *matHeaderCellDef>Date Time</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastTime }}</td>
+  </ng-container>
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [attr.colspan]="columnsToDisplayWithExpand.length"
+    >
+      <div
+        class="example-element-detail"
+        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
+      >
+        <table class="table" style="width: 100%; overflow-x: auto">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Material ID</th>
+              <th scope="col">Material Type</th>
+              <th scope="col">Weight Record</th>
+              <th scope="col">Type</th>
+              <th scope="col">Machine/Supplier</th>
+              <th scope="col">Supply/Job Order</th>
+              <th scope="col">Date Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #ca4e82"></div>
+              </th>
+              <td>651994-4215</td>
+              <td>Aluminum</td>
+              <td>5098 <span style="font-size: 12px">KM</span></td>
+              <td>Supply</td>
+              <td>Supplier Name</td>
+              <td>51925813</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #ec5967"></div>
+              </th>
+              <td>651994-4215</td>
+              <td>Sillicon</td>
+              <td>5098 <span style="font-size: 12px">KM</span></td>
+              <td>Supply</td>
+              <td>Supplier Name</td>
+              <td>51925813</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #00d3be"></div>
+              </th>
+              <td>651994-4215</td>
+              <td>Cordon</td>
+              <td>5098 <span style="font-size: 12px">KM</span></td>
+              <td>Supply</td>
+              <td>Supplier Name</td>
+              <td>51925813</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="example-element-description">
+          {{ element.description }}
+          <span class="example-element-description-attribution"> </span>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+  <tr
+    mat-row
+    *matRowDef="let element; columns: columnsToDisplayWithExpand"
+    class="example-element-row"
+    [class.example-expanded-row]="expandedElement === element"
+    (click)="expandedElement = expandedElement === element ? null : element"
+  ></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: ['expandedDetail']"
+    class="example-detail-row"
+  ></tr>
+</table>

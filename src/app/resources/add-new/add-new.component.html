@@ -1,0 +1,102 @@
+<div class="head d-flex justify-content-between align-items-center">
+  <div class="title d-flex align-items-center">
+    <img src="./assets/img/Material.svg" class="me-1" alt="" />
+    <h1>ADD NEW CATALOGE</h1>
+  </div>
+  <i class="material-icons" (click)="close()">close</i>
+</div>
+<hr />
+<div class="content">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="Item Cataloge">
+      <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
+        <mat-form-field class="example-full-width">
+          <mat-label>Item Code</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="item" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Supplier Code</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="supp" />
+        </mat-form-field>
+      </form>
+      <form class="example-form" [formGroup]="form" style="margin: 0">
+        <mat-form-field class="example-full-width">
+          <mat-label>Material Name</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="matName" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Material Type</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="matType" />
+        </mat-form-field>
+      </form>
+      <br />
+      <br />
+      <br />
+      <div class="btns text-center">
+        <button
+          class="btn btn-danger"
+          style="margin-right: 15px"
+          (click)="out()"
+        >
+          CANCEL
+        </button>
+        <button
+          class="btn btn-primary"
+          [disabled]="form.invalid"
+          (click)="addNew()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Product Cataloge">
+      <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product ID</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="item" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Name</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="supp" />
+        </mat-form-field>
+      </form>
+      <form class="example-form" [formGroup]="form" style="margin: 0">
+        <div
+          class="form-slide"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <mat-form-field class="example-full-width">
+            <mat-label>Bill Of Products</mat-label>
+            <input matInput placeholder="Ex. Pizza" formControlName="matName" />
+          </mat-form-field>
+          <mat-slide-toggle>Semi Finished Product</mat-slide-toggle>
+        </div>
+      </form>
+
+      <br />
+      <br />
+      <br />
+      <div class="btns text-center">
+        <button
+          class="btn btn-danger"
+          style="margin-right: 15px"
+          (click)="out()"
+        >
+          CANCEL
+        </button>
+        <button
+          class="btn btn-primary"
+          [disabled]="form.invalid"
+          (click)="addNew2()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

@@ -1,0 +1,905 @@
+<div class="header">
+  <mat-tab-group [(selectedIndex)]="selected">
+    <mat-tab label="TIME LINE">
+      <ng-template matTabContent>
+        <!-- Content 1 - Loaded: {{ getTimeLoaded(1) | date : "medium" }} -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="SUPPLY">
+      <ng-template matTabContent>
+        <!-- Content 2 - Loaded: {{ getTimeLoaded(2) | date : "medium" }} -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="WEIGHT">
+      <ng-template matTabContent>
+        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="CONSUMPTION">
+      <ng-template matTabContent>
+        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="PRODUCT & SCRAP">
+      <ng-template matTabContent>
+        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div
+  class="factories bg-white shadow p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-between flex-wrap align-baseline"
+>
+  <div class="name">
+    <div class="factory-name">
+      <button mat-button [matMenuTriggerFor]="belowMenu">
+        <i class="material-icons">factory</i> Factory Name
+        <i class="material-icons" style="background-color: #c0d0fa"
+          >keyboard_arrow_down</i
+        >
+      </button>
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item>Factory 1</button>
+        <button mat-menu-item>Factory 2</button>
+      </mat-menu>
+    </div>
+    <i class="material-icons">cable</i>
+    <i class="material-icons">rocket_launch</i>
+  </div>
+
+  <div class="date">
+    <h2>Today</h2>
+    <h2>Yesterday</h2>
+    <h2 style="padding-right: 20px">Last Week</h2>
+    <!-- <i class="material-icons">date_range</i> -->
+  </div>
+</div>
+
+<div class="content m-3 d-flex flex-wrap justify-content-between">
+  <div class="url-nav">
+    <h1 *ngIf="selected == 0">Resources \ Timeline</h1>
+    <h1 *ngIf="selected == 1">Resources \ Supply</h1>
+    <h1 *ngIf="selected == 2">Resources \ Weight</h1>
+    <h1 *ngIf="selected == 3">Resources \ Consumption</h1>
+    <h1 *ngIf="selected == 4">Resources \ Product & Scrap</h1>
+  </div>
+  <div class="btns">
+    <button
+      mat-raised-button
+      color="primary"
+      style="background-color: #2d62ed; width: 160px; height: 35px"
+      class="add"
+      (click)="addData()"
+    >
+      <span>+</span> ADD NEW
+    </button>
+    <input type="text" placeholder="Search by Material Name - Type" />
+    <!-- <img src="./assets/img/magnifying-glass.svg" alt="" /> -->
+  </div>
+</div>
+<div class="main">
+  <div class="row">
+    <div
+      class="col-lg-3 col-md-3 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+      style="height: fit-content"
+    >
+      <div class="info-material d-flex justify-content-start">
+        <img src="./assets/img/Material.svg" alt="" class="me-2" />
+        <h2
+          class="m-0"
+          style="
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+          "
+        >
+          Total Material Consumption
+        </h2>
+      </div>
+      <hr />
+      <div
+        class="production d-flex justify-content-between"
+        *ngIf="selected <= 1"
+      >
+        <!-- <div> -->
+        <div class="actual">
+          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <p>Actual Production</p>
+        </div>
+        <div class="planned">
+          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <p>Planned Production</p>
+        </div>
+      </div>
+      <div
+        class="production d-flex justify-content-between"
+        *ngIf="selected > 1"
+      >
+        <!-- <div> -->
+        <div class="actual">
+          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <p>Actual Material Weight</p>
+        </div>
+        <div class="planned">
+          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <p>Planned Material Weight</p>
+        </div>
+      </div>
+      <div class="progression">
+        <div class="progress" style="height: 8px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 55%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <h1>55%</h1>
+      </div>
+    </div>
+    <div
+      class="col-lg-5 col-md-5 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded materials"
+      style="height: fit-content"
+    >
+      <div class="info d-flex justify-content-start">
+        <i class="material-icons">signal_cellular_alt</i>
+        <h2 class="m-0" *ngIf="selected <= 1">Material Supply Vs Demand</h2>
+        <h2 class="m-0" *ngIf="selected > 1">
+          Material Weights Planned Vs Actual
+        </h2>
+      </div>
+      <hr />
+      <div
+        class="production d-flexjustify-content-between"
+        *ngIf="selected <= 1"
+      >
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 57%; background-color: #2e4a79"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="15"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 75%; background-color: #00d3be"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 45%; background-color: #994f90"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 85%; background-color: #ca4e82"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 98%; background-color: #ec5967"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 35%; background-color: #fb7644"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 75%; background-color: #00d1de"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar" style="width: 25%"></div>
+        </div>
+      </div>
+      <div
+        class="production d-flexjustify-content-between"
+        *ngIf="selected > 1"
+      >
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 67%; background-color: #2e4a79"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="15"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 45%; background-color: #00d3be"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 92%; background-color: #994f90"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 45%; background-color: #ca4e82"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 20%; background-color: #ec5967"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 48%; background-color: #fb7644"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            class="progress-bar"
+            style="width: 95%; background-color: #00d1de"
+          ></div>
+        </div>
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar" style="width: 25%"></div>
+        </div>
+      </div>
+      <!-- <div class="col-lg-3 col-md-5 col-sm-12"></div> -->
+    </div>
+    <div
+      class="col-lg-3 col-md-3 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+      style="height: fit-content"
+    >
+      <div class="alerting-sec" style="overflow: scroll; height: 280px">
+        <div class="info d-flex justify-content-start">
+          <h2 class="m-0">ALERTS</h2>
+        </div>
+        <hr />
+        <div class="production alerts d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img
+              src="./assets/img/Resources (1).svg"
+              style="width: 30px"
+              alt=""
+            />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 11px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="production d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div
+          class="production d-flex justify-content-between"
+          style="height: fit-content"
+        >
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img
+              src="./assets/img/Resources (1).svg"
+              style="width: 30px"
+              alt=""
+            />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="production d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div
+          class="production d-flex justify-content-between"
+          style="height: fit-content"
+        >
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img
+              src="./assets/img/Resources (1).svg"
+              style="width: 30px"
+              alt=""
+            />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="production d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual" style="text-align: center">
+            <img
+              src="./assets/img/Resources (1).svg"
+              style="width: 30px"
+              alt=""
+            />
+            <h2 style="font-size: 8px">WAREHOUSE</h2>
+          </div>
+          <div class="planned">
+            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
+            <div class="machine-id d-flex justify-content-between">
+              <p
+                style="
+                  margin: 0 12px;
+                  font-size: 12px;
+                  color: #464646;
+                  font-weight: bold;
+                "
+              >
+                ID
+              </p>
+              <p style="color: #464646; font-weight: bold">4017702</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- <h1>55%</h1> -->
+  </div>
+  <div class="row materials">
+    <div
+      class="col-lg-8 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded gap-4 mat-chart"
+    >
+      <div class="info d-flex align-items-center">
+        <img src="./assets/img/Material.svg" class="me-1" alt="" />
+        <div class="mat-title d-flex justify-content-between flex-wrap">
+          <h1 class="m-0">Material Supplier Records</h1>
+          <input
+            type="text"
+            class="search"
+            placeholder="Search by Material Name - Type"
+          />
+        </div>
+      </div>
+      <hr />
+
+      <mat-tab-group
+        mat-stretch-tabs="false"
+        mat-align-tabs="end"
+        dynamicHeight
+      >
+        <mat-tab label="Material List">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-list *ngIf="selected == 0"></app-material-list>
+            <!-- Supply -->
+            <app-material-list-supply
+              *ngIf="selected == 1"
+            ></app-material-list-supply>
+            <!-- Weight -->
+            <app-material-list-weight
+              *ngIf="selected == 2"
+            ></app-material-list-weight>
+            <!-- Consumption -->
+            <app-material-list-consum
+              *ngIf="selected == 3"
+            ></app-material-list-consum>
+            <!-- Scrap -->
+            <app-material-list-scrap
+              *ngIf="selected == 4"
+            ></app-material-list-scrap>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Material Profile" *ngIf="selected == 0">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-profile *ngIf="selected == 0"></app-material-profile>
+            <!-- Supply -->
+            <app-material-supply-profile
+              *ngIf="selected == 1"
+            ></app-material-supply-profile>
+            <!-- Weight -->
+            <app-material-profile-weight
+              *ngIf="selected == 2"
+            ></app-material-profile-weight>
+            <!-- Consumption -->
+            <app-material-profile-consum
+              *ngIf="selected == 3"
+            ></app-material-profile-consum>
+            <!-- Scrap -->
+            <app-material-profile-scrap
+              *ngIf="selected == 4"
+            ></app-material-profile-scrap>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Material Supply" *ngIf="selected == 1">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-profile *ngIf="selected == 0"></app-material-profile>
+            <!-- Supply -->
+            <app-material-supply-profile
+              *ngIf="selected == 1"
+            ></app-material-supply-profile>
+            <!-- Weight -->
+            <app-material-profile-weight
+              *ngIf="selected == 2"
+            ></app-material-profile-weight>
+            <!-- Consumption -->
+            <app-material-profile-consum
+              *ngIf="selected == 3"
+            ></app-material-profile-consum>
+            <!-- Scrap -->
+            <app-material-profile-scrap
+              *ngIf="selected == 4"
+            ></app-material-profile-scrap>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Scale Records" *ngIf="selected == 2">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-profile *ngIf="selected == 0"></app-material-profile>
+            <!-- Supply -->
+            <app-material-supply-profile
+              *ngIf="selected == 1"
+            ></app-material-supply-profile>
+            <!-- Weight -->
+            <app-material-profile-weight
+              *ngIf="selected == 2"
+            ></app-material-profile-weight>
+            <!-- Consumption -->
+            <app-material-profile-consum
+              *ngIf="selected == 3"
+            ></app-material-profile-consum>
+            <!-- Scrap -->
+            <app-material-profile-scrap
+              *ngIf="selected == 4"
+            ></app-material-profile-scrap>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Consumption Chart" *ngIf="selected == 3">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-profile *ngIf="selected == 0"></app-material-profile>
+            <!-- Supply -->
+            <app-material-supply-profile
+              *ngIf="selected == 1"
+            ></app-material-supply-profile>
+            <!-- Weight -->
+            <app-material-profile-weight
+              *ngIf="selected == 2"
+            ></app-material-profile-weight>
+            <!-- Consumption -->
+            <app-material-profile-consum
+              *ngIf="selected == 3"
+            ></app-material-profile-consum>
+            <!-- Scrap -->
+            <app-material-profile-scrap
+              *ngIf="selected == 4"
+            ></app-material-profile-scrap>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Product Chart" *ngIf="selected == 4">
+          <ng-template matTabContent>
+            <!-- Time Line -->
+            <app-material-profile *ngIf="selected == 0"></app-material-profile>
+            <!-- Supply -->
+            <app-material-supply-profile
+              *ngIf="selected == 1"
+            ></app-material-supply-profile>
+            <!-- Weight -->
+            <app-material-profile-weight
+              *ngIf="selected == 2"
+            ></app-material-profile-weight>
+            <!-- Consumption -->
+            <app-material-profile-consum
+              *ngIf="selected == 3"
+            ></app-material-profile-consum>
+            <!-- Scrap -->
+            <app-material-profile-scrap
+              *ngIf="selected == 4"
+            ></app-material-profile-scrap>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div
+      class="col-lg-3 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded top-sec"
+    >
+      <div class="title">
+        <i class="material-icons">compare_arrows</i>
+        <h1>TOP 5 / LEAST 5</h1>
+      </div>
+      <hr />
+      <div
+        class="infos d-flex justify-content-lg-between justify-content-sm-between"
+      >
+        <div *ngIf="selected !== 1">
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Material Name</h2>
+              <p>Material ID</p>
+              <p>Scale ID</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>51243</p>
+              <p>316</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selected == 1">
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+          <div class="mat-info d-flex justify-content-between">
+            <div class="mat-name">
+              <h2>Supplier Name</h2>
+              <p>Material</p>
+              <p>Price</p>
+            </div>
+            <div class="mat-state">
+              <h2>38429</h2>
+              <p>Aluminum</p>
+              <p>1000</p>
+            </div>
+          </div>
+        </div>
+        <div class="state-color d-flex">
+          <div class="info">
+            <h3>900<span>KM</span></h3>
+            <h3>500<span>KM</span></h3>
+            <br />
+            <h3>400<span>KM</span></h3>
+            <h3>460<span>KM</span></h3>
+            <h3>420<span>KM</span></h3>
+            <br />
+            <h3>320<span>KM</span></h3>
+          </div>
+          <div class="colors"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->

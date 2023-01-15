@@ -1,0 +1,545 @@
+<div class="main container-fluid">
+  <h1>Dashboard</h1>
+  <div class="row main-dash">
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+    >
+      <div class="info d-flex justify-content-start">
+        <img src="./assets/img/product.svg" alt="" />
+        <h2 class="m-0">Total Production</h2>
+      </div>
+      <hr />
+      <div class="production d-flex justify-content-between">
+        <!-- <div> -->
+        <div class="actual">
+          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <p>Actual Production</p>
+        </div>
+        <div class="planned">
+          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <p>Planned Production</p>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="progression">
+        <div class="progress" style="height: 8px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <h1>75%</h1>
+      </div>
+    </div>
+    <div
+      class="col-lg-5 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded performance"
+    >
+      <div class="info d-flex justify-content-start">
+        <img src="./assets/img/pereformance.svg" alt="" />
+        <h2 class="m-0">Total Production</h2>
+      </div>
+      <hr />
+      <div class="indicators">
+        <div
+          id="chart"
+          class="d-flex flex-wrap justify-content-evenly align-items-center"
+        >
+          <div class="per1">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [plotOptions]="chartOptions.plotOptions"
+              [fill]="chartOptions.fill"
+              [labels]="chartOptions.labels"
+              [stroke]="chartOptions.stroke"
+              [grid]="chartOptions.grid"
+            ></apx-chart>
+            <h1 class="text-center">Avalablity</h1>
+          </div>
+          <div class="per2">
+            <apx-chart
+              [series]="chartOptions2.series"
+              [chart]="chartOptions2.chart"
+              [plotOptions]="chartOptions2.plotOptions"
+              [fill]="chartOptions2.fill"
+              [labels]="chartOptions2.labels"
+              [stroke]="chartOptions2.stroke"
+            ></apx-chart>
+            <h1 class="text-center">Performance</h1>
+          </div>
+          <div class="per3">
+            <apx-chart
+              [stroke]="chartOptions3.stroke"
+              [series]="chartOptions3.series"
+              [chart]="chartOptions3.chart"
+              [plotOptions]="chartOptions3.plotOptions"
+              [fill]="chartOptions3.fill"
+              [labels]="chartOptions3.labels"
+            ></apx-chart>
+            <h1 class="text-center">Quality</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+    >
+      <div class="info d-flex justify-content-start">
+        <img src="./assets/img/product.svg" alt="" />
+        <h2 class="m-0">Total Production</h2>
+      </div>
+      <hr />
+      <div class="production d-flex justify-content-between">
+        <!-- <div> -->
+        <div class="actual">
+          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <p>Actual Production</p>
+        </div>
+        <div class="planned">
+          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <p>Planned Production</p>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="progression">
+        <div class="progress" style="height: 8px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <h1>75%</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Current Activity Section -->
+
+  <div class="alerts p-3">
+    <div class="row" style="gap: 20px">
+      <div
+        class="col-lg-7 col-sm-12 shadow p-3 mb-5 bg-body-tertiary rounded"
+        style="height: fit-content"
+      >
+        <div class="info d-flex align-items-center">
+          <img src="./assets/img/Activity.svg" class="me-1" alt="" />
+          <h1 class="m-0">Current Activity</h1>
+        </div>
+        <mat-tab-group
+          mat-stretch-tabs="false"
+          mat-align-tabs="start"
+          dynamicHeight
+        >
+          <mat-tab label="Functions">
+            <ng-template matTabContent>
+              <!-- <i class="material-icons pe-2">functions</i> -->
+              <app-functions></app-functions>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="Route">
+            <ng-template matTabContent>
+              <!-- <i class="material-icons pe-2">cable</i> -->
+              <app-route></app-route>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="Job Order">
+            <ng-template matTabContent>
+              <!-- <i class="material-icons pe-2">local_offer</i> -->
+              <app-job-order></app-job-order>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div
+        class="col-lg-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+      >
+        <div class="alerting-sec" style="overflow: scroll; max-height: 66vh">
+          <div class="info d-flex justify-content-start">
+            <h2 class="m-0">ALERTS</h2>
+          </div>
+          <hr />
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 11px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+        <hr />
+        <div class="notif-sec" style="overflow: scroll; max-height: 66vh">
+          <div class="info d-flex justify-content-start">
+            <h2 class="m-0">NOTIFICATIONS</h2>
+          </div>
+          <hr />
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 11px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="production d-flex justify-content-between">
+            <!-- <div> -->
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+<!-- End Current Activity Section -->

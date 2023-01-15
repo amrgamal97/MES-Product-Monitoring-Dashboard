@@ -1,0 +1,94 @@
+<mat-nav-list>
+  <h2>MES</h2>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/dashboard"
+    class="mt-4"
+  >
+    <i class="material-icons">dashboard</i> Dashboard
+  </a>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/resources"
+  >
+    <i class="material-icons">inventory</i> Resources
+  </a>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/manufacturing"
+  >
+    <i class="material-icons">factory</i> Manufacturing
+  </a>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/machines"
+  >
+    <i class="material-icons">plumbing</i> Machines
+  </a>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/planning"
+  >
+    <i class="material-icons">sync</i> Planning
+  </a>
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-list-item
+    routerLink="/login"
+    style="position: absolute; bottom: 0"
+  >
+    <i class="material-icons">logout</i> Logout
+  </a>
+</mat-nav-list>
+
+<!-- <div class="content">
+  <ul [ngClass]="{ 'nav-list-open': sideNavStatus }">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="material-icons">dashboard</i>
+      <span>
+        <a routerLink="/dashboard">Dashboard</a>
+      </span>
+    </li>
+    <li routerLinkActive="active">
+      <i class="material-icons">inventory</i>
+      <span>
+        <a routerLink="/resources">Resources</a>
+      </span>
+    </li>
+    <li routerLinkActive="active">
+      <i class="material-icons">factory</i>
+      <span>
+        <a routerLink="/manufacturing">Manufacturing</a>
+      </span>
+    </li>
+    <li routerLinkActive="active">
+      <i class="material-icons">plumbing</i>
+      <span>
+        <a routerLink="/machines">Machines</a>
+      </span>
+    </li>
+    <li routerLinkActive="active">
+      <i class="material-icons">sync</i>
+      <span>
+        <a routerLink="/planning">Planning</a>
+      </span>
+    </li>
+    <li style="margin-top: 120px">
+      <i class="material-icons">logout</i>
+      <span>
+        <a routerLink="/planning">Logout</a>
+      </span>
+    </li>
+  </ul>
+</div> -->

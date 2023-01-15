@@ -1,0 +1,212 @@
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Material Type</th>
+      <th scope="col">Current Weight</th>
+      <th scope="col">Last Change</th>
+      <th scope="col">Last Order Date Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #ca4e82"></div>
+      </th>
+      <td>Aluminum</td>
+      <td>1000</td>
+      <td>+100</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #ec5967"></div>
+      </th>
+      <td>Sulphat</td>
+      <td>2000</td>
+      <td>-200</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #00d3be"></div>
+      </th>
+      <td>Cardon</td>
+      <td>2400</td>
+      <td>+500</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #634f8d"></div>
+      </th>
+      <td>Material Name</td>
+      <td>3200</td>
+      <td>+350</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #994f90"></div>
+      </th>
+      <td>Material Name</td>
+      <td>1200</td>
+      <td>-100</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="ball" style="background-color: #2d62ed"></div>
+      </th>
+      <td>Material Name</td>
+      <td>3600</td>
+      <td>+280</td>
+      <td>9:00 | 3-29-2021</td>
+    </tr>
+  </tbody>
+</table> -->
+<table
+  mat-table
+  [dataSource]="dataSource"
+  multiTemplateDataRows
+  style="width: 100%; overflow: scroll"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element; let i = dataIndex">
+      <div class="ball"></div>
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Material Type</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef>Current Weight</th>
+    <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="lastChange">
+    <th mat-header-cell *matHeaderCellDef>Last Change</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastChange }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastTime">
+    <th mat-header-cell *matHeaderCellDef>Last Time Date Change</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastTime }}</td>
+  </ng-container>
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [attr.colspan]="columnsToDisplayWithExpand.length"
+    >
+      <div
+        class="example-element-detail"
+        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
+      >
+        <table class="table" style="width: 100%; overflow-x: auto">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Change Type</th>
+              <th scope="col">Change Value</th>
+              <th scope="col">Material Weight</th>
+              <th scope="col">Supplier / Machine</th>
+              <th scope="col">Supplier / Job Order</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #ca4e82"></div>
+              </th>
+              <td>Supply</td>
+              <td>+100kg</td>
+              <td>600kg</td>
+              <td>Drawing</td>
+              <td>42123</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #ec5967"></div>
+              </th>
+              <td>Consumption</td>
+              <td>-27gk</td>
+              <td>-524kg</td>
+              <td>Machine</td>
+              <td>51231</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #00d3be"></div>
+              </th>
+              <td>Supply</td>
+              <td>-40kg</td>
+              <td>475</td>
+              <td>Supplier Name</td>
+              <td>74823</td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #634f8d"></div>
+              </th>
+              <td>+40kg</td>
+              <td>3200</td>
+              <td>+350</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #994f90"></div>
+              </th>
+              <td>Material Name</td>
+              <td>1200</td>
+              <td>-100</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="ball" style="background-color: #2d62ed"></div>
+              </th>
+              <td>Material Name</td>
+              <td>3600</td>
+              <td>+280</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr> -->
+          </tbody>
+        </table>
+        <div class="example-element-description">
+          {{ element.description }}
+          <span class="example-element-description-attribution"> </span>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+  <tr
+    mat-row
+    *matRowDef="let element; columns: columnsToDisplayWithExpand"
+    class="example-element-row"
+    [class.example-expanded-row]="expandedElement === element"
+    (click)="expandedElement = expandedElement === element ? null : element"
+  ></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: ['expandedDetail']"
+    class="example-detail-row"
+  ></tr>
+</table>

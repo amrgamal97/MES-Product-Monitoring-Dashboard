@@ -1,0 +1,217 @@
+$large: 991px;
+$med: 767px;
+$small: 576px;
+$font-family-base: "Montserrat", sans-serif;
+$font-family-sec: "Roboto", sans-serif;
+.main > h1 {
+  margin: 16px 12px;
+}
+.row {
+  gap: 20px;
+  justify-content: center;
+  .total-production {
+    border-radius: 10px !important;
+    .info {
+      img {
+        margin: 0px 10px;
+      }
+      h2 {
+        font-size: 14px;
+        font-family: $font-family-base;
+        font-weight: 500;
+      }
+    }
+    .production {
+      height: 100px;
+      h2 {
+        font-weight: 500;
+        font-family: $font-family-base;
+        span {
+          font-family: $font-family-base;
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+      p {
+        font-size: 12px;
+        transition: 0.3s;
+        cursor: pointer;
+        color: #9d9d9d;
+        &:hover {
+          color: #2d62ed;
+        }
+      }
+    }
+    .progression {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+        font-weight: 600;
+        font-family: $font-family-base;
+        font-size: 24px;
+      }
+      .progress {
+        width: 75%;
+        height: 10px;
+        border-radius: 10px;
+        .progress-bar {
+          background-color: #2d62ed;
+        }
+      }
+    }
+  }
+  .performance {
+    .info {
+      img {
+        margin: 0px 10px;
+      }
+      h2 {
+        font-size: 14px;
+        font-family: $font-family-base;
+        font-weight: 500;
+      }
+    }
+    .indicators {
+      h1 {
+        font-size: 15px;
+        font-family: $font-family-base;
+        color: #000000;
+        margin: 0;
+        font-weight: 600;
+      }
+    }
+  }
+  .legend.marker.fillColors {
+    background-color: red;
+  }
+  .progress {
+    gap: 20px;
+  }
+  // .main-dash {
+  //   gap: 20px;
+  // }
+}
+.current-activity {
+  border-radius: 10px !important;
+  .mat-tab-group {
+    margin-bottom: 48px;
+  }
+
+  .info {
+    h1 {
+      color: #000000;
+      font-size: 15px;
+      font-weight: $font-family-base;
+      font-weight: 500;
+    }
+  }
+  .nav-item {
+    a {
+      color: #8d9192;
+      font-family: $font-family-sec;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+      position: relative;
+      cursor: pointer;
+      // overflow: hidden;
+      &:hover,
+      &.active {
+        color: #2d62ed;
+      }
+      &::before,
+      .active {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        background-color: #2d62ed;
+        height: 2px;
+        width: 100%;
+        right: 0;
+        opacity: 0;
+      }
+      &:hover ::before,
+      .active {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        background-color: #2d62ed;
+        height: 2px;
+        width: 100%;
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.alerts {
+  border-radius: 10px !important;
+  .mat-tab-group {
+    margin-bottom: 48px;
+  }
+  .total-production {
+    .notif-sec {
+      .info {
+        h2 {
+          color: #00d1de;
+          font-family: $font-family-base;
+          font-weight: bold;
+          position: relative;
+          margin: 0 25px !important;
+          &::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            left: -24px;
+            background-color: #00d1de;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 12px;
+          }
+        }
+      }
+    }
+    .info {
+      h2 {
+        color: #ec5967;
+        font-family: $font-family-base;
+        font-weight: bold;
+        position: relative;
+        margin: 0 25px !important;
+        &::before {
+          content: "";
+          width: 8px;
+          height: 8px;
+          left: -24px;
+          background-color: #ec5967;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 12px;
+        }
+      }
+    }
+    // overflow: scroll;
+    // max-height: 70vh;
+    .production {
+      height: fit-content;
+      .actual {
+        text-align: center;
+        img {
+          width: 30px;
+        }
+        h2 {
+          font-size: 8px;
+        }
+      }
+      .planned {
+        h2 {
+          font-size: 11px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row title-sec">
+    <div class="col-md-8 col-sm-12">
+      <div class="info">
+        <h1>WELCOME TO FMS</h1>
+        <p>
+          Ask the admain to create an account for you to start viewing our
+          Dashboards.
+        </p>
+        <button
+          mat-stroked-button
+          color="black"
+          style="
+            padding: 0 30px;
+            font-weight: bold;
+            border-radius: 50px !important;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            background-color: #2d62ed;
+          "
+          routerLink="/register"
+        >
+          Request Account
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12 login-sec">
+      <h1>MES</h1>
+      <!-- <div class="logo"></div> -->
+      <!-- <div class="login-system"> -->
+      <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
+        <input
+          type="email"
+          name=""
+          id=""
+          placeholder="EMAIL"
+          formControlName="email"
+        />
+
+        <!-- <span>  </span> -->
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="PASSWORD"
+          formControlName="password"
+        />
+        <button type="submit" mat-raised-button [disabled]="myForm.invalid">
+          LOGIN
+        </button>
+        <!-- {{ myForm.status }} -->
+        <!-- </div>  -->
+        <div>
+          <mat-card *ngIf="email.invalid && email.dirty && email.touched">
+            <mat-card-content
+              >Please enter a valid email address !</mat-card-content
+            >
+          </mat-card>
+        </div>
+        <div>
+          <mat-card
+            *ngIf="password.invalid && password.dirty && password.touched"
+          >
+            <mat-card-content
+              >Password Must Be Minimum of 5 characters!</mat-card-content
+            >
+          </mat-card>
+        </div>
+        <!-- <div>
+          <mat-card *ngIf="myForm.valid">
+            <mat-card-content>No Users Found! Try To Sign Up</mat-card-content>
+          </mat-card>
+        </div> -->
+      </form>
+    </div>
+  </div>
+</div>
