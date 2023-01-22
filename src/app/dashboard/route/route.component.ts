@@ -123,7 +123,6 @@ export class RouteComponent implements OnInit {
             },
           ],
         },
-        // Charles Lee
         {
           name: 'Extrusion',
           data: [
@@ -143,37 +142,24 @@ export class RouteComponent implements OnInit {
             },
           ],
         },
-
-        // {
-        //   name: 'Armoring',
-        //   data: [
-        //     {
-        //       x: 'Route 1',
-        //       y: [
-        //         new Date(1800, 4, 13).getTime(),
-        //         new Date(1812, 5, 5).getTime(),
-        //       ],
-        //     },
-        //   ],
-        // },
-        // {
-        //   name: 'Drawing',
-        //   data: [
-        //     {
-        //       x: 'Route 1',
-        //       y: [
-        //         new Date(1790, 4, 13).getTime(),
-        //         new Date(1802, 5, 5).getTime(),
-        //       ],
-        //     },
-        //   ],
-        // },
-        // John Marshall
       ],
       chart: {
         height: 350,
         type: 'rangeBar',
         fontFamily: 'Montserrat, sans-serif',
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       plotOptions: {
         bar: {

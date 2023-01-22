@@ -1,0 +1,79 @@
+.ball {
+  width: 12px;
+  height: 12px;
+  background-color: #ffa600;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+  transition: 0.3s;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+  transition: 0.3s;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+.mat-table {
+  overflow-x: scroll;
+}
+
+::ng-deep
+  .mat-tab-body-content.ng-tns-c121-7.ng-trigger.ng-trigger-translateTab {
+  height: 100%;
+  overflow: auto;
+}
+
+table td {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+table th {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}

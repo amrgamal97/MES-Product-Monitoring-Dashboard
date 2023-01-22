@@ -1,1 +1,207 @@
-<p>job-order works!</p>
+<!-- <div class="head-content">
+  <div class="row">
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+    >
+      <div class="info d-flex justify-content-start">
+        <img src="./assets/img/product.svg" alt="" />
+        <h2 class="m-0">Total Job Order Production</h2>
+      </div>
+      <hr />
+      <div class="production d-flex justify-content-between">
+        <div class="actual">
+          <h2 class="m-0">3,664 <span>KM</span></h2>
+          <p>Actual Production</p>
+        </div>
+        <div class="planned">
+          <h2 class="m-0">9,483 <span>KM</span></h2>
+          <p>Planned Production</p>
+        </div>
+      </div>
+      <div class="progression">
+        <div class="progress" style="height: 8px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 43%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <h1>43%</h1>
+      </div>
+    </div>
+    <div
+      class="col-lg-5 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded performance"
+      style="position: relative"
+    >
+      <div class="info d-flex justify-content-start">
+        <i class="material-icons">signal_cellular_alt</i>
+        <h2 class="m-0">Job Order Actual Vs. Planned Production</h2>
+      </div>
+      <hr />
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [yaxis]="chartOptions.yaxis"
+          [xaxis]="chartOptions.xaxis"
+          [legend]="chartOptions.legend"
+          [colors]="chartOptions.colors"
+          [grid]="chartOptions.grid"
+        ></apx-chart>
+      </div>
+    </div>
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded alerts"
+    >
+      <div class="alerting-sec" style="overflow: scroll; max-height: 66vh">
+        <div class="alerting-sec" style="overflow: scroll; max-height: 38vh">
+          <div class="info d-flex justify-content-start">
+            <mat-tab-group
+              mat-stretch-tabs="false"
+              mat-align-tabs="end"
+              dynamicHeight
+            >
+              <ng-container class="alert">
+                <mat-tab label="ALERTS"> </mat-tab>
+              </ng-container>
+              <ng-container class="notifi">
+                <mat-tab label="NOTIFICATIONS"> </mat-tab>
+              </ng-container>
+            </mat-tab-group>
+          </div>
+          <hr />
+          <div
+            class="production d-flex justify-content-between"
+            style="height: fit-content"
+          >
+            <div class="actual" style="text-align: center">
+              <img
+                src="./assets/img/Resources (1).svg"
+                style="width: 30px"
+                alt=""
+              />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 11px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="production d-flex justify-content-between"
+            *ngFor="let item of table1Tr(4)"
+          >
+            <div class="actual" style="text-align: center">
+              <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
+              <h2 style="font-size: 8px">WAREHOUSE</h2>
+            </div>
+            <div class="planned">
+              <h2 class="m-0" style="font-size: 12px">
+                Confirm mass on machine
+              </h2>
+              <div class="machine-id d-flex justify-content-between">
+                <p
+                  style="
+                    margin: 0 12px;
+                    font-size: 12px;
+                    color: #464646;
+                    font-weight: bold;
+                  "
+                >
+                  ID
+                </p>
+                <p style="color: #464646; font-weight: bold">4017702</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-lg-8 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded job-table"
+    >
+      <mat-tab-group
+        mat-stretch-tabs="false"
+        mat-align-tabs="end"
+        dynamicHeight
+      >
+        <mat-tab label="List">
+          <ng-template matTabContent>
+            <app-list></app-list>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Chart">
+          <ng-template matTabContent>
+            <app-chart></app-chart>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div
+      class="col-lg-3 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded job-order-process"
+    >
+      <div class="title d-flex align-items-center">
+        <i class="material-icons me-2">pending_actions</i>
+        Job Order Processes
+      </div>
+      <hr />
+      <div
+        class="content d-flex justify-content-between flex-wrap"
+        *ngFor="let item of table1Tr(8)"
+      >
+        <div class="functions">
+          <h2>Function Name</h2>
+          <p>
+            <img src="./assets/img/Material.svg" alt="" style="width: 22px" />
+            Material Name
+          </p>
+          <p>
+            <img
+              src="./assets/img/product.svg"
+              alt=""
+              style="width: 22px; line-height: 2.3"
+            />Product Name
+          </p>
+          <p class="d-flex">
+            <i style="font-size: 22px" class="material-icons">crop_landscape</i
+            >Scrape Name
+          </p>
+        </div>
+        <div class="Planned">
+          <h2>Planned</h2>
+          <p>50 KG</p>
+          <p>30 KG</p>
+
+          <p>24 KG</p>
+        </div>
+        <div class="Actual">
+          <h2>Actual</h2>
+          <p>33 KG</p>
+          <p>36 KG</p>
+          <p>57 KG</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

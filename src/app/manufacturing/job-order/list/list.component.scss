@@ -1,0 +1,131 @@
+table {
+  width: 100%;
+  p {
+    color: #707070;
+    font-size: 9px;
+    margin: 0;
+  }
+  .active {
+    color: #2d62ed;
+  }
+  img {
+    box-shadow: 0 0 10px #ddd;
+    padding: 2px 4px;
+    border-radius: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    &:last-child {
+      width: 32px;
+    }
+  }
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+  transition: 0.3s;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+  transition: 0.3s;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: scroll;
+  display: flex;
+  height: 22rem;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+// .mat-table {
+//   overflow-x: scroll;
+// }
+// }
+table td {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+table th {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+::ng-deep .mat-tab-group-dynamic-height,
+.mat-tab-body-content {
+  overflow-y: auto;
+}
+.mat-table {
+  overflow-x: scroll;
+}
+
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 0px 10px;
+  line-break: unset;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #707070;
+  vertical-align: middle;
+  // font-family: $font-family-base;
+  font-weight: 700;
+  position: relative;
+  &::before {
+    // content: "";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .mat-cell,
+  .mat-header-cell {
+    padding-right: 30px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .mat-cell {
+    padding-right: 0 10px;
+  }
+}
+
+.mat-row,
+.mat-header-row {
+  display: table-row;
+}

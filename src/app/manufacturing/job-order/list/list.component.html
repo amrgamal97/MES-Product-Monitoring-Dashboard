@@ -1,0 +1,182 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  multiTemplateDataRows
+  style="width: 100%; overflow: scroll"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>Job Order ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef>Starting Date</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.date }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <th mat-header-cell *matHeaderCellDef>State</th>
+    <td mat-cell *matCellDef="let element">
+      <img src="./assets/img/Activity.svg" alt="" />
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="client">
+    <th mat-header-cell *matHeaderCellDef>Client</th>
+    <td mat-cell *matCellDef="let element">{{ element.client }}</td>
+  </ng-container>
+  <ng-container matColumnDef="sales">
+    <th mat-header-cell *matHeaderCellDef>Sales</th>
+    <td mat-cell *matCellDef="let element">{{ element.sales }}</td>
+  </ng-container>
+  <ng-container matColumnDef="product">
+    <th mat-header-cell *matHeaderCellDef>Product</th>
+    <td mat-cell *matCellDef="let element">{{ element.product }}</td>
+  </ng-container>
+  <ng-container matColumnDef="routerId">
+    <th mat-header-cell *matHeaderCellDef>Route ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.routeId }}</td>
+  </ng-container>
+  <ng-container matColumnDef="icons">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <img
+        (click)="
+          expandedElement = expandedElement === element ? element : element
+        "
+        (click)="showing()"
+        src="./assets/img/Material.svg"
+        alt=""
+      />
+      <img
+        (click)="
+          expandedElement = expandedElement === element ? element : element
+        "
+        (click)="showing2()"
+        src="./assets/img/product.svg"
+        alt=""
+      />
+      <img
+        (click)="
+          expandedElement = expandedElement === element ? element : element
+        "
+        (click)="showing3()"
+        src="./assets/img/machine.svg"
+        alt=""
+      />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [attr.colspan]="columnsToDisplayWithExpand.length"
+    >
+      <div
+        class="example-element-detail"
+        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
+      >
+        <table
+          class="table"
+          style="width: 100%; overflow-x: auto"
+          *ngIf="table1"
+        >
+          <thead>
+            <tr>
+              <th scope="col">Material</th>
+              <th scope="col">
+                Consumption <br />
+                <p>Actual | Planned</p>
+              </th>
+              <th scope="col">Function</th>
+              <th scope="col">Date</th>
+              <th scope="col">Product</th>
+              <th scope="col">
+                Production <br />
+                <p>Actual | Planned</p>
+              </th>
+              <th scope="col">Worker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of table1Tr(5)">
+              <td>Material Name</td>
+              <td>10kg | 15kg</td>
+              <td>
+                <span
+                  class="ball"
+                  style="background-color: #ca4e82; display: inline"
+                ></span>
+                Function Name
+              </td>
+              <td>9:00 | 3-29-2021</td>
+              <td>Production Name</td>
+              <td>10kg | 15kg</td>
+              <td>Mohamed Ahmed</td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          class="table"
+          style="width: 100%; overflow-x: auto"
+          *ngIf="table2"
+        >
+          <thead>
+            <tr>
+              <th scope="col">Function</th>
+              <th scope="col">Starting Date</th>
+              <th scope="col">Material</th>
+              <th scope="col">
+                Consumption <br />
+                <p>Actual | Planned</p>
+              </th>
+              <th scope="col">Product</th>
+              <th scope="col">
+                Production <br />
+                <p>Actual | Planned</p>
+              </th>
+              <th scope="col">Worker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of table1Tr(3)">
+              <td>651994-4215</td>
+              <td>Amr</td>
+              <td>5098 <span style="font-size: 12px">KM</span></td>
+              <td>Supply</td>
+              <td>Supplier Name</td>
+              <td>51925813</td>
+              <td>9:00 | 3-29-2021</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="example-element-description">
+          {{ element.description }}
+          <span class="example-element-description-attribution"> </span>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+  <tr
+    mat-row
+    *matRowDef="let element; columns: columnsToDisplayWithExpand"
+    class="example-element-row"
+    [class.example-expanded-row]="expandedElement === element"
+  ></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: ['expandedDetail']"
+    class="example-detail-row"
+  ></tr>
+</table>

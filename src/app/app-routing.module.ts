@@ -41,10 +41,16 @@ const routes: Routes = [
       ),
     canActivate: [GuardGuard],
   },
+  {
+    path: 'machines',
+    loadChildren: () =>
+      import('./machines/machines.module').then((e) => e.MachinesModule),
+    canActivate: [GuardGuard],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

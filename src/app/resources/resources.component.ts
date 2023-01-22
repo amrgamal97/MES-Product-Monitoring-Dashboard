@@ -10,6 +10,9 @@ import { AddNewComponent } from './add-new/add-new.component';
 })
 export class ResourcesComponent implements OnInit {
   selected: number = 0;
+  table1Tr(n: number) {
+    return Array(n);
+  }
   constructor(private route: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {}

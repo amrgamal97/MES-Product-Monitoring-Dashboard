@@ -12,21 +12,29 @@
       <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
         <mat-form-field class="example-full-width">
           <mat-label>Item Code</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="item" />
+          <input matInput placeholder="Ex. 41293" formControlName="item" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Supplier Code</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="supp" />
+          <input matInput placeholder="Ex. 11492" formControlName="supp" />
         </mat-form-field>
       </form>
       <form class="example-form" [formGroup]="form" style="margin: 0">
         <mat-form-field class="example-full-width">
           <mat-label>Material Name</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="matName" />
+          <input
+            matInput
+            placeholder="Ex. Aluminum"
+            formControlName="matName"
+          />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <mat-label>Material Type</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="matType" />
+          <mat-label>Material Type (Optional)</mat-label>
+          <input
+            matInput
+            placeholder="Ex. Material Type 1"
+            formControlName="matType"
+          />
         </mat-form-field>
       </form>
       <br />
@@ -53,11 +61,11 @@
       <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
         <mat-form-field class="example-full-width">
           <mat-label>Product ID</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="item" />
+          <input matInput placeholder="Ex. 49120" formControlName="item" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Product Name</mat-label>
-          <input matInput placeholder="Ex. Pizza" formControlName="supp" />
+          <input matInput placeholder="Ex. Armoring" formControlName="supp" />
         </mat-form-field>
       </form>
       <form class="example-form" [formGroup]="form" style="margin: 0">
@@ -72,7 +80,7 @@
         >
           <mat-form-field class="example-full-width">
             <mat-label>Bill Of Products</mat-label>
-            <input matInput placeholder="Ex. Pizza" formControlName="matName" />
+            <input matInput placeholder="Ex. 990" formControlName="matName" />
           </mat-form-field>
           <mat-slide-toggle>Semi Finished Product</mat-slide-toggle>
         </div>

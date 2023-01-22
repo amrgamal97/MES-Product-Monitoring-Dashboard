@@ -84,6 +84,19 @@ export class MaterialProfileWeightComponent implements OnInit {
       chart: {
         height: 350,
         type: 'bubble',
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       dataLabels: {
         enabled: false,

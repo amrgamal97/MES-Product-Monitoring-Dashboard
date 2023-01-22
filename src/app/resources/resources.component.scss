@@ -175,10 +175,6 @@ $font-family-sec: "Roboto", sans-serif;
       }
     }
     .production {
-      height: 100px;
-      // height: fit-content;
-      // alerts {
-      // }
       h2 {
         font-weight: 500;
         font-family: $font-family-base;
@@ -370,6 +366,11 @@ $font-family-sec: "Roboto", sans-serif;
   }
   .infos {
     gap: 10px;
+    @media screen and (max-width: 576px) {
+      & {
+        justify-content: space-between;
+      }
+    }
     .mat-info {
       gap: 10px !important;
       line-height: 1.2;

@@ -99,6 +99,19 @@ export class JobOrderComponent implements OnInit {
       chart: {
         height: 350,
         type: 'rangeBar',
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 1300,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       plotOptions: {
         bar: {

@@ -40,6 +40,19 @@ export class DashboardComponent implements OnInit {
         sparkline: {
           enabled: false,
         },
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       series: [76],
       plotOptions: {

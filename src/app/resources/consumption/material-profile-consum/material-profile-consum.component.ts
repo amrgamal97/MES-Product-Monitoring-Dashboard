@@ -138,6 +138,19 @@ export class MaterialProfileConsumComponent implements OnInit {
       chart: {
         height: 350,
         type: 'rangeBar',
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       plotOptions: {
         bar: {

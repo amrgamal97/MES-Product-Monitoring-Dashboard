@@ -1,3 +1,4 @@
+import { MachinesModule } from './machines/machines.module';
 import { ResourcesModule } from './resources/resources.module';
 // import { MaterialProfileComponent } from './resources/material-profile/material-profile.component';
 // import { MaterialListComponent } from './resources/material-list/material-list.component';
@@ -22,7 +23,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './auth/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {
   ErrorStateMatcher,
@@ -55,6 +56,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ManufacturingComponent } from './manufacturing/manufacturing.component';
 import { ManufacturingModule } from './manufacturing/manufacturing.module';
+import { MachinesComponent } from './machines/machines.component';
+// import { MachinesComponent } from './machines/machines.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 
 // import { SideNavComponent } from './side-nav/side-nav.component';
 // import { AnimationsComponent } from './animations/animations.component';
@@ -70,9 +75,12 @@ import { ManufacturingModule } from './manufacturing/manufacturing.module';
     SidenavComponent,
     ResourcesComponent,
     ManufacturingComponent,
+    MachinesComponent,
   ],
   imports: [
     // TreeNode,
+    MatSliderModule,
+    MatCheckboxModule,
     MatTabsModule,
     NgApexchartsModule,
     MatToolbarModule,
@@ -105,6 +113,7 @@ import { ManufacturingModule } from './manufacturing/manufacturing.module';
     MatPaginatorModule,
     MatSortModule,
     ManufacturingModule,
+    MachinesModule,
   ],
   providers: [MatSidenavContainer],
   bootstrap: [AppComponent],

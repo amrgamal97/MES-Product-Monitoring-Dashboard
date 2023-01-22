@@ -52,7 +52,6 @@
     <h2>Today</h2>
     <h2>Yesterday</h2>
     <h2 style="padding-right: 20px">Last Week</h2>
-    <!-- <i class="material-icons">date_range</i> -->
   </div>
 </div>
 
@@ -375,7 +374,10 @@
           <h2 class="m-0">ALERTS</h2>
         </div>
         <hr />
-        <div class="production alerts d-flex justify-content-between">
+        <div
+          class="production d-flex justify-content-between"
+          *ngFor="let item of table1Tr(8)"
+        >
           <!-- <div> -->
           <div class="actual" style="text-align: center">
             <img
@@ -387,144 +389,6 @@
           </div>
           <div class="planned">
             <h2 class="m-0" style="font-size: 11px">Confirm mass on machine</h2>
-            <div class="machine-id d-flex justify-content-between">
-              <p
-                style="
-                  margin: 0 12px;
-                  font-size: 12px;
-                  color: #464646;
-                  font-weight: bold;
-                "
-              >
-                ID
-              </p>
-              <p style="color: #464646; font-weight: bold">4017702</p>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="production d-flex justify-content-between">
-          <!-- <div> -->
-          <div class="actual" style="text-align: center">
-            <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
-            <h2 style="font-size: 8px">WAREHOUSE</h2>
-          </div>
-          <div class="planned">
-            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
-            <div class="machine-id d-flex justify-content-between">
-              <p
-                style="
-                  margin: 0 12px;
-                  font-size: 12px;
-                  color: #464646;
-                  font-weight: bold;
-                "
-              >
-                ID
-              </p>
-              <p style="color: #464646; font-weight: bold">4017702</p>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div
-          class="production d-flex justify-content-between"
-          style="height: fit-content"
-        >
-          <!-- <div> -->
-          <div class="actual" style="text-align: center">
-            <img
-              src="./assets/img/Resources (1).svg"
-              style="width: 30px"
-              alt=""
-            />
-            <h2 style="font-size: 8px">WAREHOUSE</h2>
-          </div>
-          <div class="planned">
-            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
-            <div class="machine-id d-flex justify-content-between">
-              <p
-                style="
-                  margin: 0 12px;
-                  font-size: 12px;
-                  color: #464646;
-                  font-weight: bold;
-                "
-              >
-                ID
-              </p>
-              <p style="color: #464646; font-weight: bold">4017702</p>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="production d-flex justify-content-between">
-          <!-- <div> -->
-          <div class="actual" style="text-align: center">
-            <img src="./assets/img/machine.svg" style="width: 30px" alt="" />
-            <h2 style="font-size: 8px">WAREHOUSE</h2>
-          </div>
-          <div class="planned">
-            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
-            <div class="machine-id d-flex justify-content-between">
-              <p
-                style="
-                  margin: 0 12px;
-                  font-size: 12px;
-                  color: #464646;
-                  font-weight: bold;
-                "
-              >
-                ID
-              </p>
-              <p style="color: #464646; font-weight: bold">4017702</p>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div
-          class="production d-flex justify-content-between"
-          style="height: fit-content"
-        >
-          <!-- <div> -->
-          <div class="actual" style="text-align: center">
-            <img
-              src="./assets/img/Resources (1).svg"
-              style="width: 30px"
-              alt=""
-            />
-            <h2 style="font-size: 8px">WAREHOUSE</h2>
-          </div>
-          <div class="planned">
-            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
-            <div class="machine-id d-flex justify-content-between">
-              <p
-                style="
-                  margin: 0 12px;
-                  font-size: 12px;
-                  color: #464646;
-                  font-weight: bold;
-                "
-              >
-                ID
-              </p>
-              <p style="color: #464646; font-weight: bold">4017702</p>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="production d-flex justify-content-between">
-          <!-- <div> -->
-          <div class="actual" style="text-align: center">
-            <img
-              src="./assets/img/Resources (1).svg"
-              style="width: 30px"
-              alt=""
-            />
-            <h2 style="font-size: 8px">WAREHOUSE</h2>
-          </div>
-          <div class="planned">
-            <h2 class="m-0" style="font-size: 12px">Confirm mass on machine</h2>
             <div class="machine-id d-flex justify-content-between">
               <p
                 style="

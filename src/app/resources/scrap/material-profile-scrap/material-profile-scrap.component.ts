@@ -98,6 +98,19 @@ export class MaterialProfileScrapComponent implements OnInit {
             console.log(new Date(e.xaxis.min));
           },
         },
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       colors: ['#994F90', '#FB7644', '#FF2366', '#00D3BE', '#003F5C'],
       dataLabels: {

@@ -102,6 +102,19 @@ export class MaterialProfileComponent implements OnInit {
         group: 'social',
         type: 'line',
         height: 160,
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       colors: ['#008FFB'],
       yaxis: {
