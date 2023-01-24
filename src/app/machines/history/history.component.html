@@ -1,7 +1,7 @@
 <div class="col-lg-12">
   <div class="row g-3">
     <div class="col-lg-8 col-sm-12">
-      <div class="content bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
+      <div class="content bg-white shadow p-3 mb-5 bg-white rounded">
         <h2>Machine History</h2>
         <hr />
         <mat-tab-group>
@@ -11,7 +11,7 @@
                 mat-table
                 [dataSource]="dataSource"
                 multiTemplateDataRows
-                style="width: 100%; overflow: scroll"
+                style="width: 100%; overflow: auto"
                 class="mat-elevation-z8"
               >
                 <ng-container matColumnDef="position">
@@ -174,7 +174,7 @@
     </div>
     <div class="col-lg-4 col-sm-12">
       <div
-        class="bg-white shadow p-3 mb-5 bg-body-tertiary rounded layers-option layer-sec"
+        class="bg-white shadow p-3 mb-5 bg-white rounded layers-option layer-sec"
       >
         <h2 class="mb-2"><i class="material-icons">layers</i> Layers</h2>
         <hr />
@@ -234,7 +234,7 @@
         </div>
       </div>
       <div
-        class="bg-white shadow p-3 mb-5 bg-body-tertiary rounded layers-option option-sec"
+        class="bg-white shadow p-3 mb-5 bg-white rounded layers-option option-sec"
       >
         <h2 class="mb-2"><i class="material-icons">settings</i> Options</h2>
         <hr />

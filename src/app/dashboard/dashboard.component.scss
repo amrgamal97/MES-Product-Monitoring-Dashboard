@@ -1,8 +1,7 @@
+@use "../../assets/sass/utilities/fonts" as *;
 $large: 991px;
 $med: 767px;
 $small: 576px;
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
 .main > h1 {
   margin: 16px 12px;
 }
@@ -18,18 +17,18 @@ $font-family-sec: "Roboto", sans-serif;
       h2 {
         font-size: 14px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .production {
       height: 100px;
       h2 {
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         span {
           font-family: $font-family-base;
           font-size: 13px;
-          font-weight: 500;
+          font-weight: $font-semi-bold;
         }
       }
       p {
@@ -49,7 +48,7 @@ $font-family-sec: "Roboto", sans-serif;
 
       h1 {
         margin: 0;
-        font-weight: 600;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         font-size: 24px;
       }
@@ -71,7 +70,7 @@ $font-family-sec: "Roboto", sans-serif;
       h2 {
         font-size: 14px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .indicators {
@@ -80,7 +79,7 @@ $font-family-sec: "Roboto", sans-serif;
         font-family: $font-family-base;
         color: #000000;
         margin: 0;
-        font-weight: 600;
+        font-weight: $font-semi-bold;
       }
     }
   }
@@ -102,7 +101,7 @@ $font-family-sec: "Roboto", sans-serif;
       color: #000000;
       font-size: 15px;
       font-weight: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
   }
   .nav-item {

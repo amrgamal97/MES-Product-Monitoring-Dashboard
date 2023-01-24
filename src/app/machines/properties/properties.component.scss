@@ -1,5 +1,5 @@
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
+// @use "../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/fonts" as *;
 ::ng-deep
   .mat-button-toggle-standalone.mat-button-toggle-appearance-standard:not(
     [class*="mat-elevation-z"]
@@ -17,7 +17,7 @@ $font-family-sec: "Roboto", sans-serif;
 
 ::ng-deep .mat-button-toggle-appearance-standard {
   color: #4c788d;
-  font-weight: 500;
+  font-weight: $font-semi-bold;
 }
 
 ::ng-deep .mat-button-toggle-label-content {

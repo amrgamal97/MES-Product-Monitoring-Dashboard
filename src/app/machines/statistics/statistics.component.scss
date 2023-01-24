@@ -1,5 +1,4 @@
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
+@use "../../../assets/sass/utilities/fonts" as *;
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -28,18 +27,18 @@ $small: 576px;
     h2 {
       font-size: 14px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
   }
   .production {
     height: 100px;
     h2 {
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       font-family: $font-family-base;
       span {
         font-family: $font-family-base;
         font-size: 13px;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     p {
@@ -59,7 +58,7 @@ $small: 576px;
 
     h1 {
       margin: 0;
-      font-weight: 600;
+      font-weight: $font-semi-bold;
       font-family: $font-family-base;
       font-size: 24px;
     }
@@ -81,7 +80,7 @@ $small: 576px;
     h2 {
       font-size: 14px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
   }
   .indicators {
@@ -90,7 +89,7 @@ $small: 576px;
       font-family: $font-family-base;
       color: #000000;
       margin: 0;
-      font-weight: 600;
+      font-weight: $font-semi-bold;
     }
   }
 }
@@ -110,7 +109,7 @@ $small: 576px;
   .checklist {
     ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       font-size: 13px;
     }
     ::ng-deep .mat-checkbox-inner-container {
@@ -136,7 +135,7 @@ $small: 576px;
 
     ::ng-deep .mat-button-toggle-appearance-standard {
       color: #4c788d;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
 
     ::ng-deep .mat-button-toggle-label-content {

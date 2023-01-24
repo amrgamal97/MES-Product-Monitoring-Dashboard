@@ -1,5 +1,4 @@
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
+@use "../../assets/sass/utilities/fonts" as *;
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -62,7 +61,7 @@ h2 {
         margin: 0 8px 0 0;
         color: #2d62ed;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-size: 14px;
       }
     }
@@ -89,7 +88,7 @@ h2 {
       color: #b2bec3;
       font-size: 12px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       padding: 0 20px;
       transition: 0.3s;
       cursor: pointer;
@@ -170,7 +169,7 @@ h2 {
         display: flex;
         align-items: center;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: $font-semi;
         color: #000000;
       }
     }
@@ -198,7 +197,7 @@ h2 {
           font-size: 15px;
         }
         span {
-          font-weight: 400;
+          font-weight: $font-semi;
           color: #ffffff;
         }
       }
@@ -250,7 +249,7 @@ h2 {
           justify-content: space-between;
           align-items: center;
           color: #4c788dcc;
-          font-weight: 600;
+          font-weight: $font-semi-bold;
           font-size: 15px;
           mat-progress-bar {
             width: 85%;
@@ -278,12 +277,12 @@ h2 {
     .checklist {
       // span {
       //   font-family: $font-family-base;
-      //   font-weight: 500;
+      //   font-weight: $font-semi-bold;
       //   font-size: 14px;
       // }
       ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-size: 13px;
       }
       ::ng-deep .mat-checkbox-inner-container {
@@ -310,7 +309,7 @@ h2 {
 
       ::ng-deep .mat-button-toggle-appearance-standard {
         color: #4c788d;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
 
       ::ng-deep .mat-button-toggle-label-content {
@@ -363,18 +362,18 @@ h2 {
     h2 {
       font-size: 14px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
   }
   .production {
     height: 100px;
     h2 {
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       font-family: $font-family-base;
       span {
         font-family: $font-family-base;
         font-size: 13px;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     p {
@@ -394,7 +393,7 @@ h2 {
 
     h1 {
       margin: 0;
-      font-weight: 600;
+      font-weight: $font-semi-bold;
       font-family: $font-family-base;
       font-size: 24px;
     }
@@ -416,7 +415,7 @@ h2 {
     h2 {
       font-size: 14px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
   }
   .indicators {
@@ -425,7 +424,7 @@ h2 {
       font-family: $font-family-base;
       color: #000000;
       margin: 0;
-      font-weight: 600;
+      font-weight: $font-semi-bold;
     }
   }
 }

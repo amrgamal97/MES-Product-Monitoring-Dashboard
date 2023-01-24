@@ -1,3 +1,5 @@
+@use "../../../../assets/sass/utilities/fonts" as *;
+
 .ball {
   width: 12px;
   height: 12px;
@@ -11,11 +13,6 @@ table {
 tr.example-detail-row {
   height: 0;
 }
-
-// ::ng-deep
-//   tr.mat-row.cdk-row.example-element-row.ng-tns-c105-9.ng-star-inserted {
-//   cursor: pointer;
-// }
 
 tr.example-element-row:not(.example-expanded-row):hover {
   background: whitesmoke;
@@ -69,12 +66,12 @@ tr.example-element-row:not(.example-expanded-row):active {
 // }
 table td {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-family: $font-family-base;
+  font-weight: $font-semi;
 }
 table th {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family-base;
   font-weight: bold;
 }
 tr.mat-row,

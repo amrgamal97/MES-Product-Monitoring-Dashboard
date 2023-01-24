@@ -1,5 +1,5 @@
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
+// @use "../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/fonts" as *;
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -72,7 +72,7 @@ tr.example-element-row:not(.example-expanded-row):active {
 table td {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: $font-semi;
 }
 table th {
   font-size: 12px;
@@ -96,7 +96,7 @@ table th {
   .checklist {
     ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       font-size: 13px;
     }
     ::ng-deep .mat-checkbox-inner-container {
@@ -122,7 +122,7 @@ table th {
 
     ::ng-deep .mat-button-toggle-appearance-standard {
       color: #4c788d;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
     }
 
     ::ng-deep .mat-button-toggle-label-content {

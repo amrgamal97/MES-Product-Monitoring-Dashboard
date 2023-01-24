@@ -1,5 +1,4 @@
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
+@use "../../assets/sass/utilities/fonts" as *;
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -73,7 +72,7 @@ $small: 576px;
         margin: 0 8px 0 0;
         color: #2d62ed;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-size: 14px;
       }
     }
@@ -100,7 +99,7 @@ $small: 576px;
       color: #b2bec3;
       font-size: 12px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       padding: 0 20px;
       transition: 0.3s;
       margin: 0;
@@ -170,18 +169,18 @@ $small: 576px;
       h2 {
         font-size: 14px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .production {
       height: 100px;
       h2 {
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         span {
           font-family: $font-family-base;
           font-size: 13px;
-          font-weight: 500;
+          font-weight: $font-semi-bold;
         }
       }
       p {
@@ -201,7 +200,7 @@ $small: 576px;
 
       h1 {
         margin: 0;
-        font-weight: 600;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         font-size: 24px;
       }
@@ -224,7 +223,7 @@ $small: 576px;
       h2 {
         font-size: 14px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .indicators {
@@ -241,7 +240,7 @@ $small: 576px;
         bottom: -10px;
         left: 30px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .legend.marker.fillColors {
@@ -315,7 +314,7 @@ $small: 576px;
   p {
     font-family: $font-family-base;
     margin: 0;
-    font-weight: 400;
+    font-weight: $font-semi;
     font-size: 12px;
     color: #4c788d80 !important;
   }

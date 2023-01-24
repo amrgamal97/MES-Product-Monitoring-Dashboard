@@ -1,9 +1,9 @@
+@use "../../assets/sass/utilities/fonts" as *;
+
 ::ng-deep .mat-tab-list .mat-tab-labels {
   display: flex;
   justify-content: center;
 }
-$font-family-base: "Montserrat", sans-serif;
-$font-family-sec: "Roboto", sans-serif;
 
 .header {
   background-color: #ffffff;
@@ -44,7 +44,7 @@ $font-family-sec: "Roboto", sans-serif;
         margin: 0 8px 0 0;
         color: #2d62ed;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-size: 14px;
       }
     }
@@ -71,7 +71,7 @@ $font-family-sec: "Roboto", sans-serif;
       color: #b2bec3;
       font-size: 12px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       padding: 0 20px;
       transition: 0.3s;
       margin: 0;
@@ -176,12 +176,12 @@ $font-family-sec: "Roboto", sans-serif;
     }
     .production {
       h2 {
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         span {
           font-family: $font-family-base;
           font-size: 13px;
-          font-weight: 500;
+          font-weight: $font-semi-bold;
         }
       }
       .progress {
@@ -210,7 +210,7 @@ $font-family-sec: "Roboto", sans-serif;
 
       h1 {
         margin: 0;
-        font-weight: 600;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         font-size: 24px;
       }
@@ -237,7 +237,7 @@ $font-family-sec: "Roboto", sans-serif;
       h2 {
         font-size: 14px;
         font-family: $font-family-base;
-        font-weight: 500;
+        font-weight: $font-semi-bold;
       }
     }
     .production {
@@ -248,12 +248,12 @@ $font-family-sec: "Roboto", sans-serif;
       margin: 24px;
       justify-content: center;
       h2 {
-        font-weight: 500;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         span {
           font-family: $font-family-base;
           font-size: 13px;
-          font-weight: 500;
+          font-weight: $font-semi-bold;
         }
       }
       .progress {
@@ -282,7 +282,7 @@ $font-family-sec: "Roboto", sans-serif;
 
       h1 {
         margin: 0;
-        font-weight: 600;
+        font-weight: $font-semi-bold;
         font-family: $font-family-base;
         font-size: 24px;
       }
@@ -317,7 +317,7 @@ $font-family-sec: "Roboto", sans-serif;
     h1 {
       font-size: 12px;
       font-family: $font-family-base;
-      font-weight: 500;
+      font-weight: $font-semi-bold;
       margin: 0;
     }
     .search {
@@ -345,7 +345,7 @@ $font-family-sec: "Roboto", sans-serif;
 
 .top-sec {
   height: fit-content;
-  overflow: scroll;
+  overflow: auto;
   .title {
     display: flex;
     h1 {
@@ -373,7 +373,7 @@ $font-family-sec: "Roboto", sans-serif;
       line-height: 1.2;
       h2 {
         font-size: 12px;
-        font-family: Montserrat, sans-serif;
+        font-family: $font-family-base;
         margin: 0;
         line-height: 1.2;
       }
@@ -385,11 +385,11 @@ $font-family-sec: "Roboto", sans-serif;
       .mat-name {
         h2 {
           color: #4c788d;
-          font-weight: 500;
+          font-weight: $font-semi-bold;
           margin: 0;
         }
         p {
-          font-weight: 400;
+          font-weight: $font-semi;
         }
       }
       .mat-state {
@@ -422,9 +422,9 @@ $font-family-sec: "Roboto", sans-serif;
       .info {
         h3 {
           color: #4c788d;
-          font-family: Montserrat, sans-serif;
+          font-family: $font-family-base;
           margin: 0;
-          font-weight: 400;
+          font-weight: $font-semi;
           span {
             font-size: 12px;
           }

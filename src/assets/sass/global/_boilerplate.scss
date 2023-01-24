@@ -1,0 +1,19 @@
+@use "../utilities/fonts" as f;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-family: f.$font-family-base;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}

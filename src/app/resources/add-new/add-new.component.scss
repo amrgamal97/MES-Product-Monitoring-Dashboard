@@ -1,9 +1,11 @@
+@use "../../../assets/sass/utilities/fonts" as *;
+
 .head {
   .title {
     h1 {
       font-size: 14px;
-      font-weight: 500;
-      font-family: "Montserrat", sans-serif;
+      font-weight: $font-semi-bold;
+      font-family: $font-family-base;
       margin: 0;
     }
     img {
@@ -23,8 +25,8 @@
 }
 ::ng-deep .mat-slide-toggle-content {
   font-size: 13px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: $font-family-base;
+  font-weight: $font-semi-bold;
 }
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: #2d62ed;

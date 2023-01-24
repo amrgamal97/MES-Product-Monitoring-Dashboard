@@ -16,7 +16,7 @@
 </div>
 <div class="flow-chart">
   <div
-    class="factories bg-white shadow p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-between flex-wrap align-baseline"
+    class="factories bg-white shadow p-3 mb-5 bg-white rounded d-flex justify-content-between flex-wrap align-baseline"
   >
     <div class="name">
       <div class="factory-name">
@@ -59,7 +59,7 @@
     <div class="head-content">
       <div class="row">
         <div
-          class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
+          class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-white rounded total-production"
         >
           <div class="info d-flex justify-content-start">
             <img src="./assets/img/product.svg" alt="" />
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div
-          class="col-lg-5 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded performance"
+          class="col-lg-5 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-white rounded performance"
           style="position: relative"
         >
           <div class="info d-flex justify-content-start">
@@ -184,13 +184,10 @@
           </div>
         </div>
         <div
-          class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded alerts"
+          class="col-lg-3 col-md-4 col-sm-12 bg-white shadow p-3 mb-5 bg-white rounded alerts"
         >
-          <div class="alerting-sec" style="overflow: scroll; max-height: 66vh">
-            <div
-              class="alerting-sec"
-              style="overflow: scroll; max-height: 38vh"
-            >
+          <div class="alerting-sec" style="overflow: auto; max-height: 66vh">
+            <div class="alerting-sec" style="overflow: auto; max-height: 38vh">
               <div class="info d-flex justify-content-start">
                 <mat-tab-group
                   mat-stretch-tabs="false"
@@ -278,7 +275,7 @@
       </div>
       <div class="row">
         <div
-          class="col-lg-8 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded job-table"
+          class="col-lg-8 col-sm-12 bg-white shadow p-3 mb-5 bg-white rounded job-table"
         >
           <mat-tab-group
             mat-stretch-tabs="false"
@@ -301,7 +298,7 @@
           </mat-tab-group>
         </div>
         <div
-          class="col-lg-3 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded job-order-process"
+          class="col-lg-3 col-sm-12 bg-white shadow p-3 mb-5 bg-white rounded job-order-process"
         >
           <div *ngIf="selected == 1" class="title d-flex align-items-center">
             <i class="material-icons me-2">pending_actions</i>
