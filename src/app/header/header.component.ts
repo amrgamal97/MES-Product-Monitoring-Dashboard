@@ -11,11 +11,6 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  // sideToggle() {
-  //   this.menu = !this.menu;
-  //   this.sideButtonToggle.emit(this.menu);
-  //   console.log(this.menu);
-  // }
   toggleSide() {
     this.sideButtonToggle.emit();
   }

@@ -31,6 +31,9 @@ export class DashboardComponent implements OnInit {
   public chartOptions: Partial<ChartOptions>;
   public chartOptions2: Partial<ChartOptions>;
   public chartOptions3: Partial<ChartOptions>;
+  items(n: number) {
+    return Array(n);
+  }
   constructor() {
     this.chartOptions = {
       chart: {

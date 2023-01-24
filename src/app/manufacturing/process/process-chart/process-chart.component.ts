@@ -70,7 +70,6 @@ export class ProcessChartComponent implements OnInit {
             },
           ],
         },
-        // George Clinton
         {
           name: 'Drawing',
           data: [
@@ -83,7 +82,6 @@ export class ProcessChartComponent implements OnInit {
             },
           ],
         },
-        // John Jay
         {
           name: 'AssemblyII',
           data: [
@@ -182,11 +180,7 @@ export class ProcessChartComponent implements OnInit {
       xaxis: {
         type: 'datetime',
       },
-      // yaxis:{
-      //   show:false,
-      // }
       legend: {
-        // position: 'right',
         show: false,
       },
     };

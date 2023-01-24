@@ -1,29 +1,19 @@
 <div class="header">
   <mat-tab-group [(selectedIndex)]="selected">
     <mat-tab label="TIME LINE">
-      <ng-template matTabContent>
-        <!-- Content 1 - Loaded: {{ getTimeLoaded(1) | date : "medium" }} -->
-      </ng-template>
+      <ng-template matTabContent> </ng-template>
     </mat-tab>
     <mat-tab label="SUPPLY">
-      <ng-template matTabContent>
-        <!-- Content 2 - Loaded: {{ getTimeLoaded(2) | date : "medium" }} -->
-      </ng-template>
+      <ng-template matTabContent> </ng-template>
     </mat-tab>
     <mat-tab label="WEIGHT">
-      <ng-template matTabContent>
-        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
-      </ng-template>
+      <ng-template matTabContent> </ng-template>
     </mat-tab>
     <mat-tab label="CONSUMPTION">
-      <ng-template matTabContent>
-        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
-      </ng-template>
+      <ng-template matTabContent> </ng-template>
     </mat-tab>
     <mat-tab label="PRODUCT & SCRAP">
-      <ng-template matTabContent>
-        <!-- Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }} -->
-      </ng-template>
+      <ng-template matTabContent> </ng-template>
     </mat-tab>
   </mat-tab-group>
 </div>
@@ -553,11 +543,9 @@
               <p style="color: #464646; font-weight: bold">4017702</p>
             </div>
           </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>
-    <!-- <h1>55%</h1> -->
   </div>
   <div class="row materials">
     <div
@@ -583,21 +571,16 @@
       >
         <mat-tab label="Material List">
           <ng-template matTabContent>
-            <!-- Time Line -->
             <app-material-list *ngIf="selected == 0"></app-material-list>
-            <!-- Supply -->
             <app-material-list-supply
               *ngIf="selected == 1"
             ></app-material-list-supply>
-            <!-- Weight -->
             <app-material-list-weight
               *ngIf="selected == 2"
             ></app-material-list-weight>
-            <!-- Consumption -->
             <app-material-list-consum
               *ngIf="selected == 3"
             ></app-material-list-consum>
-            <!-- Scrap -->
             <app-material-list-scrap
               *ngIf="selected == 4"
             ></app-material-list-scrap>

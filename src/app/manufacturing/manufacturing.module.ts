@@ -5,9 +5,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ManufacturingRoutingModule } from './manufacturing-routing.module';
-import { JobOrderComponent } from './job-order/job-order.component';
-import { RoutesComponent } from './routes/routes.component';
-import { ProcessComponent } from './process/process.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,10 +16,6 @@ import { ProcessChartComponent } from './process/process-chart/process-chart.com
 
 @NgModule({
   declarations: [
-    JobOrderComponent,
-    RoutesComponent,
-    ProcessComponent,
-    JobOrderComponent,
     ListComponent,
     RouteChartComponent,
     FlowChartComponent,
@@ -44,11 +37,7 @@ import { ProcessChartComponent } from './process/process-chart/process-chart.com
     ManufacturingRoutingModule,
     RouteChartComponent,
     RouteListComponent,
-    JobOrderComponent,
-    RoutesComponent,
-    ProcessComponent,
     NgApexchartsModule,
-    JobOrderComponent,
     MatTableModule,
     ChartComponent,
     ProcessListComponent,
@@ -57,7 +46,7 @@ import { ProcessChartComponent } from './process/process-chart/process-chart.com
     ListComponent,
     FlowChartComponent,
     RouteChartComponent,
-    ProcessChartComponent,
+    // ProcessChartComponent,
   ],
 })
 export class ManufacturingModule {}

@@ -66,7 +66,6 @@ export class GoodvsscrapChartComponent implements OnInit {
       },
       legend: {
         show: true,
-        // showForSingleSeries: true,
         customLegendItems: ['Scrap', 'Good'],
         itemMargin: {
           vertical: 5,
