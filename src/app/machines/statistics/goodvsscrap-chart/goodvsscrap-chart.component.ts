@@ -76,14 +76,14 @@ export class GoodvsscrapChartComponent implements OnInit {
       },
       xaxis: {
         categories: [
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
-          ['Machine', 'Name'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
+          ['Machine'],
         ],
         labels: {
           style: {

@@ -105,15 +105,6 @@ table th {
   font-family: $font-family-base;
   font-weight: 700;
   position: relative;
-  &::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-  }
 }
 
 @include breakpoint(large) {

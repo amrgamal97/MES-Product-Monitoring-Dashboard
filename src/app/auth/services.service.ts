@@ -59,6 +59,7 @@ export class ServicesService {
         this.spin.hide();
         localStorage.removeItem('token');
         this.router.navigate(['/login']);
+        this.toast.success('We Hope To See You Again Soon!');
       },
       (err) => {
         this.spin.hide();

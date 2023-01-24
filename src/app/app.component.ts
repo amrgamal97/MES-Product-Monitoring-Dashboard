@@ -1,4 +1,3 @@
-import { animator } from './animations';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, DoCheck, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -8,11 +7,9 @@ import { Router, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [animator],
 })
 export class AppComponent implements OnInit, DoCheck {
   navControl: boolean = false;
-  // sideNavStatus: boolean = false;
   sideBarOpen: boolean = false;
   constructor(private router: Router, private obs: BreakpointObserver) {}
 

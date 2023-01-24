@@ -45,8 +45,8 @@
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
     mat-list-item
-    routerLink="/login"
     style="position: absolute; bottom: 0"
+    (click)="logOut()"
   >
     <i class="material-icons">logout</i> Logout
   </a>
