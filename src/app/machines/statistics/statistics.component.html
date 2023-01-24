@@ -1,0 +1,284 @@
+<div class="col-lg-12">
+  <div class="row g-4">
+    <div class="col-lg-3 col-sm-12 total-production">
+      <div class="content bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="info d-flex justify-content-start">
+          <img src="./assets/img/product.svg" alt="" />
+          <h2 class="m-0">Total Production</h2>
+        </div>
+        <hr />
+        <div class="production d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual">
+            <h2 class="m-0">9,231 <span>KM</span></h2>
+            <p>Actual Production</p>
+          </div>
+          <div class="planned">
+            <h2 class="m-0">3,474 <span>KM</span></h2>
+            <p>Planned Production</p>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="progression">
+          <div class="progress" style="height: 8px">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 34%"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <h1>34%</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12 performance">
+      <div class="content bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="info d-flex justify-content-start">
+          <img src="./assets/img/pereformance.svg" alt="" />
+          <h2 class="m-0">Performance Indicator KPI</h2>
+        </div>
+        <hr />
+        <div class="indicators">
+          <div
+            id="chart"
+            class="d-flex flex-wrap justify-content-evenly align-items-center"
+          >
+            <div class="per1">
+              <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [plotOptions]="chartOptions.plotOptions"
+                [fill]="chartOptions.fill"
+                [labels]="chartOptions.labels"
+                [stroke]="chartOptions.stroke"
+                [grid]="chartOptions.grid"
+              ></apx-chart>
+              <h1 class="text-center">Avalablity</h1>
+            </div>
+            <div class="per2">
+              <apx-chart
+                [series]="chartOptions2.series"
+                [chart]="chartOptions2.chart"
+                [plotOptions]="chartOptions2.plotOptions"
+                [fill]="chartOptions2.fill"
+                [labels]="chartOptions2.labels"
+                [stroke]="chartOptions2.stroke"
+              ></apx-chart>
+              <h1 class="text-center">Performance</h1>
+            </div>
+            <div class="per3">
+              <apx-chart
+                [stroke]="chartOptions3.stroke"
+                [series]="chartOptions3.series"
+                [chart]="chartOptions3.chart"
+                [plotOptions]="chartOptions3.plotOptions"
+                [fill]="chartOptions3.fill"
+                [labels]="chartOptions3.labels"
+              ></apx-chart>
+              <h1 class="text-center">Quality</h1>
+            </div>
+          </div>
+        </div>
+        <h2>
+          <div
+            class="progression d-flex justify-content-around align-items-center"
+          >
+            EEO
+            <div
+              class="progress"
+              style="height: 8px; width: 70%; margin-top: 10px"
+            >
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 84%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            84%
+          </div>
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-12 total-production">
+      <div class="content bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="info d-flex justify-content-start">
+          <img src="./assets/img/product.svg" alt="" />
+          <h2 class="m-0">Material Production</h2>
+        </div>
+        <hr />
+        <div class="production d-flex justify-content-between">
+          <!-- <div> -->
+          <div class="actual">
+            <h2 class="m-0">8,450 <span>KM</span></h2>
+            <p>Actual Production</p>
+          </div>
+          <div class="planned">
+            <h2 class="m-0">2,430 <span>KM</span></h2>
+            <p>Planned Production</p>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="progression">
+          <div class="progress" style="height: 8px">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 67%"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <h1>67%</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="row g-3">
+    <div class="col-lg-8 col-sm-12">
+      <div class="content bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="title">
+          <h2>Machine Statistics</h2>
+          <hr />
+          <mat-tab-group>
+            <mat-tab label="Over Time">
+              <ng-template matTabContent>
+                <app-overtime-chart></app-overtime-chart>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Down Time">
+              <ng-template matTabContent>
+                <app-downtime-chart></app-downtime-chart>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Good Vs. Scrap">
+              <ng-template matTabContent>
+                <app-goodvsscrap-chart></app-goodvsscrap-chart>
+              </ng-template>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div
+        class="bg-white shadow p-3 mb-5 bg-body-tertiary rounded layers-option layer-sec"
+      >
+        <h2 class="mb-2"><i class="material-icons">layers</i> Layers</h2>
+        <hr />
+        <mat-form-field appearance="standard">
+          <mat-label>Job Order</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="order">
+            <mat-option *ngFor="let order of orders" [value]="order.value">
+              {{ order.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Route</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="route">
+            <mat-option *ngFor="let route of routes" [value]="route.value">
+              {{ route.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="checklist">
+          <section class="text-center">
+            <mat-button-toggle-group
+              [formControl]="fontStyleControl"
+              aria-label="Font Style"
+            >
+              <mat-button-toggle value="kpis">FUNCTION</mat-button-toggle>
+              <mat-button-toggle value="current">MATERIAL</mat-button-toggle>
+              <mat-button-toggle value="comparision">PRODUCT</mat-button-toggle>
+            </mat-button-toggle-group>
+          </section>
+          <div class="content" *ngIf="fontStyleControl.value == 'kpis'">
+            <mat-checkbox
+              color="primary"
+              class="example-margin"
+              *ngFor="let item of items(9)"
+              ><span>Function</span></mat-checkbox
+            >
+          </div>
+          <div
+            class="content"
+            color="primary"
+            *ngIf="fontStyleControl.value == 'current'"
+          >
+            <mat-checkbox class="example-margin" *ngFor="let item of items(9)"
+              >Material</mat-checkbox
+            >
+          </div>
+          <div
+            class="content"
+            color="primary"
+            *ngIf="fontStyleControl.value == 'comparision'"
+          >
+            <mat-checkbox *ngFor="let item of items(9)" class="example-margin"
+              >Product</mat-checkbox
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow p-3 mb-5 bg-body-tertiary rounded layers-option option-sec"
+      >
+        <h2 class="mb-2"><i class="material-icons">settings</i> Options</h2>
+        <hr />
+
+        <div class="checklist">
+          <div class="content" *ngIf="fontStyleControl.value == 'kpis'">
+            <mat-checkbox color="primary" class="example-margin"
+              ><span>Active</span></mat-checkbox
+            >
+            <mat-checkbox color="primary" class="example-margin"
+              ><span>Inactive</span></mat-checkbox
+            >
+          </div>
+          <h2>Material Consumption</h2>
+          <mat-slider
+            min="0"
+            max="100000"
+            step="1000"
+            showTickMarks
+            discrete
+            [displayWith]="formatLabel"
+          >
+            <input matSliderThumb />
+          </mat-slider>
+          <h2>Energy Consumption</h2>
+          <mat-slider
+            min="0"
+            max="100000"
+            step="1000"
+            showTickMarks
+            discrete
+            [displayWith]="formatLabel"
+          >
+            <input matSliderThumb />
+          </mat-slider>
+          <h2>Production</h2>
+          <mat-slider
+            min="0"
+            max="100000"
+            step="1000"
+            showTickMarks
+            discrete
+            [displayWith]="formatLabel"
+          >
+            <input matSliderThumb />
+          </mat-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

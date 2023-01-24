@@ -14,50 +14,13 @@ export interface PeriodicElement {
   lastTime: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1,
-    name: 'Product Name',
-    weight: 'newely supplied',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 2,
-    name: 'Product Name',
-    weight: 'post process',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 3,
-    name: 'Product Name',
-    weight: 'scale',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 4,
-    name: 'Product Name',
-    weight: 'post process',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 5,
-    name: 'Product Name',
-    weight: 'newely supplied',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 6,
-    name: 'Product Name',
-    weight: 'post process',
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-];
+const ELEMENT_DATA: PeriodicElement[] = Array(6).fill({
+  position: 1,
+  name: 'Product Name',
+  weight: 'newely supplied',
+  lastChange: 'Aluminum',
+  lastTime: '9:00 | 3-29-2021',
+});
 @Component({
   selector: 'app-material-list-scrap',
   templateUrl: './material-list-scrap.component.html',

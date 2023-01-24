@@ -68,6 +68,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
     weight: 'Pourtier 2600/4 - Assembly - Medium Voltage',
     symbol: 'Assembly 2200 - Assembly/Wire Armoring',
   },
+  {
+    title: 'Stranding',
+    name: 'Pourtier 2200/2 Low Voltage - Assembly',
+    weight: 'Pourtier 2600/4 - Assembly - Medium Voltage',
+    symbol: 'Assembly 2200 - Assembly/Wire Armoring',
+  },
+  {
+    title: 'Stranding',
+    name: 'Pourtier 2200/2 Low Voltage - Assembly',
+    weight: 'Pourtier 2600/4 - Assembly - Medium Voltage',
+    symbol: 'Assembly 2200 - Assembly/Wire Armoring',
+  },
+  {
+    title: 'Stranding',
+    name: 'Pourtier 2200/2 Low Voltage - Assembly',
+    weight: 'Pourtier 2600/4 - Assembly - Medium Voltage',
+    symbol: 'Assembly 2200 - Assembly/Wire Armoring',
+  },
 ];
 
 @Component({

@@ -10,16 +10,14 @@
       </div>
       <hr />
       <div class="production d-flex justify-content-between">
-        <!-- <div> -->
         <div class="actual">
-          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <h2 class="m-0">9,500 <span>KM</span></h2>
           <p>Actual Production</p>
         </div>
         <div class="planned">
-          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <h2 class="m-0">2,340 <span>KM</span></h2>
           <p>Planned Production</p>
         </div>
-        <!-- </div> -->
       </div>
       <div class="progression">
         <div class="progress" style="height: 8px">
@@ -40,7 +38,7 @@
     >
       <div class="info d-flex justify-content-start">
         <img src="./assets/img/pereformance.svg" alt="" />
-        <h2 class="m-0">Total Production</h2>
+        <h2 class="m-0">Performance Indicator KPI</h2>
       </div>
       <hr />
       <div class="indicators">
@@ -90,33 +88,31 @@
     >
       <div class="info d-flex justify-content-start">
         <img src="./assets/img/product.svg" alt="" />
-        <h2 class="m-0">Total Production</h2>
+        <h2 class="m-0">Material Consumption</h2>
       </div>
       <hr />
       <div class="production d-flex justify-content-between">
-        <!-- <div> -->
         <div class="actual">
-          <h2 class="m-0">5,000 <span>KM</span></h2>
+          <h2 class="m-0">2,460 <span>KM</span></h2>
           <p>Actual Production</p>
         </div>
         <div class="planned">
-          <h2 class="m-0">7,000 <span>KM</span></h2>
+          <h2 class="m-0">6,245 <span>KM</span></h2>
           <p>Planned Production</p>
         </div>
-        <!-- </div> -->
       </div>
       <div class="progression">
         <div class="progress" style="height: 8px">
           <div
             class="progress-bar"
             role="progressbar"
-            style="width: 75%"
+            style="width: 57%"
             aria-valuenow="25"
             aria-valuemin="0"
             aria-valuemax="100"
           ></div>
         </div>
-        <h1>75%</h1>
+        <h1>57%</h1>
       </div>
     </div>
   </div>
@@ -140,13 +136,11 @@
         >
           <mat-tab label="Functions">
             <ng-template matTabContent>
-              <!-- <i class="material-icons pe-2">functions</i> -->
               <app-functions></app-functions>
             </ng-template>
           </mat-tab>
           <mat-tab label="Route">
             <ng-template matTabContent>
-              <!-- <i class="material-icons pe-2">cable</i> -->
               <app-route></app-route>
             </ng-template>
           </mat-tab>
@@ -162,7 +156,16 @@
         class="col-lg-4 col-sm-12 bg-white shadow p-3 mb-5 bg-body-tertiary rounded total-production"
       >
         <div class="alerting-sec" style="overflow: scroll; max-height: 66vh">
-          <div class="info d-flex justify-content-start">
+          <div
+            class="info d-flex justify-content-start;"
+            style="
+              position: sticky;
+              top: -1px;
+              background-color: white;
+              padding: 8px 0 15px 0;
+              z-index: 99;
+            "
+          >
             <h2 class="m-0">ALERTS</h2>
           </div>
           <hr />
@@ -350,7 +353,16 @@
         </div>
         <hr />
         <div class="notif-sec" style="overflow: scroll; max-height: 66vh">
-          <div class="info d-flex justify-content-start">
+          <div
+            class="info d-flex justify-content-start"
+            style="
+              position: sticky;
+              top: -1px;
+              background-color: white;
+              padding: 8px 0 15px 0;
+              z-index: 99;
+            "
+          >
             <h2 class="m-0">NOTIFICATIONS</h2>
           </div>
           <hr />
@@ -538,8 +550,5 @@
         </div>
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </div>
-
-<!-- End Current Activity Section -->

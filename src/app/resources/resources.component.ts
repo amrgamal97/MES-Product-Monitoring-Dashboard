@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddNewComponent } from './add-new/add-new.component';
@@ -13,7 +13,11 @@ export class ResourcesComponent implements OnInit {
   table1Tr(n: number) {
     return Array(n);
   }
-  constructor(private route: Router, private dialog: MatDialog) {}
+  constructor(
+    private route: Router,
+    private dialog: MatDialog,
+    private r: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {}
   addData() {

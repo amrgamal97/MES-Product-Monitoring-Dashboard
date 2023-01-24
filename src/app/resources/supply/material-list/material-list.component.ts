@@ -8,56 +8,17 @@ import {
 import { Component, OnInit } from '@angular/core';
 export interface PeriodicElement {
   name: string;
-  position: number;
   weight: number;
   lastChange: string;
   lastTime: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 2,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 3,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 4,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 5,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-  {
-    position: 6,
-    name: 'Supplier Name',
-    weight: 1000,
-    lastChange: 'Aluminum',
-    lastTime: '9:00 | 3-29-2021',
-  },
-];
+const ELEMENT_DATA: PeriodicElement[] = Array(6).fill({
+  name: 'Supplier Name',
+  weight: 1000,
+  lastChange: 'Aluminum',
+  lastTime: '9:00 | 3-29-2021',
+});
 @Component({
   selector: 'app-material-list-supply',
   templateUrl: './material-list.component.html',

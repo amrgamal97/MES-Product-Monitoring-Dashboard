@@ -92,6 +92,19 @@ export class DashboardComponent implements OnInit {
         type: 'radialBar',
         height: 120,
         width: 110,
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       stroke: {
         lineCap: 'round',
@@ -134,6 +147,19 @@ export class DashboardComponent implements OnInit {
         type: 'radialBar',
         height: 120,
         width: 110,
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 2000,
+          animateGradually: {
+            enabled: true,
+            delay: 150,
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350,
+          },
+        },
       },
       stroke: {
         lineCap: 'round',

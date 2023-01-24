@@ -1,3 +1,10 @@
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 export interface PeriodicElement {
   position: number;
@@ -26,6 +33,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
 export class ListComponent implements OnInit {
   table1Tr(n: number) {

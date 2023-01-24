@@ -30,7 +30,6 @@ export class JobOrderComponent implements OnInit {
   constructor() {
     this.chartOptions = {
       series: [
-        // George Washington
         {
           name: 'Job 1',
           data: [
@@ -43,7 +42,6 @@ export class JobOrderComponent implements OnInit {
             },
           ],
         },
-        // John Adams
         {
           name: 'Job 2',
           data: [
@@ -56,7 +54,6 @@ export class JobOrderComponent implements OnInit {
             },
           ],
         },
-        // George Clinton
         {
           name: 'Job 3',
           data: [
@@ -69,7 +66,6 @@ export class JobOrderComponent implements OnInit {
             },
           ],
         },
-        // John Jay
         {
           name: 'Job 4',
           data: [
@@ -82,7 +78,6 @@ export class JobOrderComponent implements OnInit {
             },
           ],
         },
-        // Charles Lee
         {
           name: 'Job 5',
           data: [
@@ -120,16 +115,16 @@ export class JobOrderComponent implements OnInit {
           rangeBarGroupRows: true,
         },
       },
-
       fill: {
         type: 'solid',
         colors: ['#003F5C'],
       },
+
       xaxis: {
         type: 'datetime',
       },
       legend: {
-        position: 'right',
+        show: false,
       },
     };
   }

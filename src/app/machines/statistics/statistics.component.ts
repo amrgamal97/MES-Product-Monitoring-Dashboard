@@ -1,31 +1,16 @@
-import { PropertiesComponent } from './properties/properties.component';
-import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartComponent } from 'ng-apexcharts';
-import { ChartOptions } from '../dashboard/dashboard.component';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Orders, Routes } from './model';
-
+import { ChartOptions } from 'src/app/dashboard/dashboard.component';
+import { Orders, Routes } from 'src/app/machines/model';
 @Component({
-  selector: 'app-machines',
-  templateUrl: './machines.component.html',
-  styleUrls: ['./machines.component.scss'],
+  selector: 'app-statistics',
+  templateUrl: './statistics.component.html',
+  styleUrls: ['./statistics.component.scss'],
 })
-export class MachinesComponent implements OnInit {
-  @ViewChild('chart') chart: ChartComponent;
+export class StatisticsComponent implements OnInit {
   public chartOptions: Partial<ChartOptions>;
   public chartOptions2: Partial<ChartOptions>;
   public chartOptions3: Partial<ChartOptions>;
-  selectedValue: string;
-  selectedCar: string;
-  formatLabel(value: number): string {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-
-    return `${value}`;
-  }
-
   orders: Orders[] = [
     { value: 'order-0', viewValue: 'Job Order 1' },
     { value: 'order-1', viewValue: 'Job Order 2' },
@@ -38,11 +23,18 @@ export class MachinesComponent implements OnInit {
   ];
   fontStyleControl = new FormControl('kpis');
   fontStyle?: string;
+  selectedValue: number = 0;
   items(n: number) {
     return Array(n);
   }
-  selected: number = 0;
-  constructor(private dialog: MatDialog) {
+  formatLabel(value: number): string {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+
+    return `${value}`;
+  }
+  constructor() {
     this.chartOptions = {
       chart: {
         type: 'radialBar',
@@ -154,11 +146,4 @@ export class MachinesComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  view() {
-    this.dialog.open(PropertiesComponent, {
-      height: '450px',
-      width: '600px',
-    });
-  }
 }

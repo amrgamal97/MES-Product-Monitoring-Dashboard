@@ -158,87 +158,6 @@ $small: 576px;
     }
   }
 }
-// .flow-chart {
-//   .title {
-//     display: flex;
-//     gap: 12px;
-//     align-items: center;
-//     h2 {
-//       font-family: $font-family-base;
-//       font-weight: 500;
-//       margin: 0;
-//       font-size: 14px;
-//     }
-//     i {
-//       color: #2c3e50;
-//     }
-//   }
-// }
-
-// .labels {
-//   .title {
-//     display: flex;
-//     gap: 12px;
-//     align-items: center;
-//     h2 {
-//       font-family: $font-family-base;
-//       font-weight: 500;
-//       margin: 0;
-//       font-size: 14px;
-//     }
-//     i {
-//       color: #2c3e50;
-//     }
-//   }
-//   .main-content {
-//     display: flex;
-//     justify-content: space-between;
-//     .tools {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       .ball {
-//         width: 20px;
-//         height: 20px;
-//         background-color: #2e4a79;
-//         border-radius: 50%;
-//         margin: 0.5rem;
-//       }
-//       .ball-line {
-//         width: 30px;
-//         height: 3px;
-//         background-color: #2e4a79;
-//         margin-top: 2rem;
-//       }
-//       .colorful-balls {
-//         width: 10px;
-//         height: 10px;
-//         background-color: #994f90;
-//         border-radius: 50%;
-//         margin-top: 2.3rem;
-//       }
-//       .two-bar {
-//         margin-top: 2.1rem;
-//       }
-//       .one-bar {
-//         margin-top: 1.4rem;
-//       }
-//       .one-bar-opacity {
-//         margin-top: 1.8rem;
-//         opacity: 0.6;
-//       }
-//     }
-//     .tools-title {
-//       h2 {
-//         font-family: $font-family-base;
-//         font-size: 14px;
-//         color: #2e4a79;
-//         font-weight: 500;
-//       }
-//     }
-//   }
-// }
-
 .row {
   gap: 20px;
   justify-content: center;
@@ -378,6 +297,13 @@ $small: 576px;
 }
 
 .job-order-process {
+  .content {
+    @media screen and (max-width: 576px) {
+      & {
+        justify-content: space-between !important;
+      }
+    }
+  }
   color: #003f5c;
   max-height: 400px;
   overflow: auto;

@@ -1,0 +1,169 @@
+$font-family-base: "Montserrat", sans-serif;
+$font-family-sec: "Roboto", sans-serif;
+$large: 991px;
+$med: 767px;
+$small: 576px;
+
+.statistics-section {
+  .performance {
+    .content {
+      .progressing {
+        ::ng-deep .mat-progress-bar.mat-progress-bar.mat-primary {
+          height: 10px;
+          width: 60%;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+.total-production {
+  border-radius: 10px !important;
+  .info {
+    img {
+      margin: 0px 10px;
+    }
+    h2 {
+      font-size: 14px;
+      font-family: $font-family-base;
+      font-weight: 500;
+    }
+  }
+  .production {
+    height: 100px;
+    h2 {
+      font-weight: 500;
+      font-family: $font-family-base;
+      span {
+        font-family: $font-family-base;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+    p {
+      font-size: 12px;
+      transition: 0.3s;
+      cursor: pointer;
+      color: #9d9d9d;
+      &:hover {
+        color: #2d62ed;
+      }
+    }
+  }
+  .progression {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+      font-weight: 600;
+      font-family: $font-family-base;
+      font-size: 24px;
+    }
+    .progress {
+      width: 75%;
+      height: 10px;
+      border-radius: 10px;
+      .progress-bar {
+        background-color: #2d62ed;
+      }
+    }
+  }
+}
+.performance {
+  .info {
+    img {
+      margin: 0px 10px;
+    }
+    h2 {
+      font-size: 14px;
+      font-family: $font-family-base;
+      font-weight: 500;
+    }
+  }
+  .indicators {
+    h1 {
+      font-size: 15px;
+      font-family: $font-family-base;
+      color: #000000;
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+}
+.layers-option {
+  height: fit-content;
+  h2 {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 5px;
+    }
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .checklist {
+    ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+      font-family: $font-family-base;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    ::ng-deep .mat-checkbox-inner-container {
+      height: 13px;
+      width: 13px;
+    }
+    ::ng-deep
+      .mat-button-toggle-standalone.mat-button-toggle-appearance-standard:not(
+        [class*="mat-elevation-z"]
+      ),
+    .mat-button-toggle-group-appearance-standard:not(
+        [class*="mat-elevation-z"]
+      ) {
+      box-shadow: 0 0 10px #ddd !important;
+      @media screen and (max-width: 576px) {
+        font-size: 10px;
+      }
+    }
+    ::ng-deep .mat-button-toggle-checked {
+      background-color: #2d62ed !important;
+      color: #ffffff;
+    }
+
+    ::ng-deep .mat-button-toggle-appearance-standard {
+      color: #4c788d;
+      font-weight: 500;
+    }
+
+    ::ng-deep .mat-button-toggle-label-content {
+      line-height: 1.6 !important;
+      padding: 6px 12px !important;
+    }
+    ::ng-deep span.mat-button-toggle-label-content {
+      font-size: 10px;
+    }
+    ::ng-deep .mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+      color: #ffffff !important;
+      font-family: $font-family-base !important;
+      font-weight: bold !important;
+    }
+    ::ng-deep span.mat-button-toggle-label-content {
+      font-family: $font-family-base;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      padding: 1.5rem 0;
+      row-gap: 1.5rem;
+      text-align: center;
+    }
+    mat-slider {
+      width: 100%;
+    }
+  }
+}

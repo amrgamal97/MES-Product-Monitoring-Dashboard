@@ -184,13 +184,13 @@ export class RouteComponent implements OnInit {
         type: 'datetime',
       },
       legend: {
-        position: 'right',
+        position: 'bottom',
+        fontSize: '12',
+        fontFamily: 'Montserrat, sans-serif',
       },
     };
   }
   ngOnInit(): void {
-    // window.dispatchEvent(new Event('resize'));
-    // location.reload();
     console.log(this.chartOptions.series?.length);
   }
 }

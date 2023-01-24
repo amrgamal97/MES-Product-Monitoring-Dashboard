@@ -65,9 +65,12 @@
   }
   form {
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     input {
       display: block;
-      margin: 26px;
+      margin: 15px;
       border: 1px solid #2d62ed;
       border-radius: 50px;
       /* font-size: 15px; */
@@ -108,5 +111,15 @@
     position: absolute;
     bottom: -6rem;
     max-width: 16rem;
+  }
+  mat-expansion-panel {
+    background-color: #2d62ed;
+    margin-top: 35px;
+  }
+  mat-panel-title.mat-expansion-panel-header-title {
+    color: white;
+  }
+  ::ng-deep.mat-expansion-panel-body {
+    color: white;
   }
 }

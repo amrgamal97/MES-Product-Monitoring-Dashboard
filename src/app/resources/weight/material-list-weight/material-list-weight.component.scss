@@ -12,11 +12,6 @@ tr.example-detail-row {
   height: 0;
 }
 
-// ::ng-deep
-//   tr.mat-row.cdk-row.example-element-row.ng-tns-c105-9.ng-star-inserted {
-//   cursor: pointer;
-// }
-
 tr.example-element-row:not(.example-expanded-row):hover {
   background: whitesmoke;
   transition: 0.3s;
@@ -62,11 +57,6 @@ tr.example-element-row:not(.example-expanded-row):active {
   overflow-x: scroll;
 }
 
-// ::ng-deep
-//   .mat-tab-body-content.ng-tns-c121-7.ng-trigger.ng-trigger-translateTab {
-//   height: 100%;
-//   overflow: auto;
-// }
 table td {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
@@ -76,4 +66,11 @@ table th {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+}
+tr.mat-row,
+tr.mat-footer-row {
+  cursor: pointer;
+}
+::ng-deep .mat-tab-group-dynamic-height .mat-tab-body-content {
+  overflow: auto;
 }

@@ -77,3 +77,10 @@ table th {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
+tr.mat-row,
+tr.mat-footer-row {
+  cursor: pointer;
+}
+::ng-deep .mat-tab-group-dynamic-height .mat-tab-body-content {
+  overflow: auto;
+}

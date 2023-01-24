@@ -25,8 +25,8 @@ export class GuardGuard implements CanActivate {
     if ('token' in localStorage) {
       return true;
     } else {
-      this.router.navigate(['/login']);
       this.toast.error('Please Login To Access Content!');
+      this.router.navigate(['/login']);
       return false;
     }
   }

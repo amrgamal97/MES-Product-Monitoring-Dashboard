@@ -12,10 +12,10 @@ tr.example-detail-row {
   height: 0;
 }
 
-// ::ng-deep
-//   tr.mat-row.cdk-row.example-element-row.ng-tns-c105-9.ng-star-inserted {
-//   cursor: pointer;
-// }
+tr.mat-row,
+tr.mat-footer-row {
+  cursor: pointer;
+}
 
 tr.example-element-row:not(.example-expanded-row):hover {
   background: whitesmoke;
@@ -67,6 +67,11 @@ tr.example-element-row:not(.example-expanded-row):active {
   height: 100%;
   overflow: auto;
 }
+
+::ng-deep .mat-tab-group-dynamic-height .mat-tab-body-content {
+  overflow: auto;
+}
+
 table td {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;

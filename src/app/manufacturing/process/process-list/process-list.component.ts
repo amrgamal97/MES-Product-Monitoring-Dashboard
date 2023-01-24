@@ -9,62 +9,15 @@ export interface PeriodicElement {
   date: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-  {
-    position: 512412,
-    name: 'Function Name',
-    weight: 1000,
-    lastChange: 'Armoring',
-    lastTime: '48210',
-    orderID: 55122,
-    date: '9:00 | 3-29-2021',
-  },
-];
+const ELEMENT_DATA: PeriodicElement[] = Array(8).fill({
+  position: 512412,
+  name: 'Function Name',
+  weight: 1000,
+  lastChange: 'Armoring',
+  lastTime: '48210',
+  orderID: 55122,
+  date: '9:00 | 3-29-2021',
+});
 @Component({
   selector: 'app-process-list',
   templateUrl: './process-list.component.html',

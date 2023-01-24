@@ -1,11 +1,4 @@
-// table.mat-table {
-//   table-layout: fixed;
-//   width: 100%;
-//   display: table;
-//   border-spacing: 0;
-// }
 $font-family-base: "Montserrat", sans-serif;
-
 $med: 767px;
 $lg: 1200px;
 
@@ -62,4 +55,14 @@ $lg: 1200px;
   border-radius: 50%;
   position: absolute;
   right: 0;
+}
+table td {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+table th {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
