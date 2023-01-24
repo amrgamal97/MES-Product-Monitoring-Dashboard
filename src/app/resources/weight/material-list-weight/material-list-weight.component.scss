@@ -3,7 +3,7 @@
 .ball {
   width: 12px;
   height: 12px;
-  background-color: #00d1de;
+  background-color: var(--sec-color);
   border-radius: 50%;
 }
 table {
@@ -61,12 +61,12 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 table td {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family-base;
   font-weight: $font-semi;
 }
 table th {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family-base;
   font-weight: bold;
 }
 tr.mat-row,

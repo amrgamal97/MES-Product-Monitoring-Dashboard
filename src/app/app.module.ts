@@ -60,6 +60,7 @@ import { MachinesComponent } from './machines/machines.component';
 // import { MachinesComponent } from './machines/machines.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // import { SideNavComponent } from './side-nav/side-nav.component';
 // import { AnimationsComponent } from './animations/animations.component';
@@ -76,6 +77,7 @@ import { MatSliderModule } from '@angular/material/slider';
     ResourcesComponent,
     ManufacturingComponent,
     MachinesComponent,
+    NotFoundComponent,
   ],
   imports: [
     // TreeNode,

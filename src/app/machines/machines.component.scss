@@ -1,4 +1,6 @@
 @use "../../assets/sass/utilities/fonts" as *;
+@use "../../assets/sass/utilities/breakpoints" as *;
+
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -32,10 +34,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    @media screen and (max-width: 576px) {
-      & {
-        justify-content: center;
-      }
+    @include breakpoint(small) {
+      justify-content: center;
     }
     .factory-name {
       padding: 10px;
@@ -44,22 +44,20 @@ h2 {
       padding: 5px;
       justify-content: center;
       align-items: center;
-      background-color: #2d62ed4d;
+      background-color: var(--main-color) 4d;
       border-radius: 10px;
       margin: 0 10px;
-      @media screen and (max-width: 576px) {
-        & {
-          width: 100%;
-          margin-bottom: 10px;
-        }
+      @include breakpoint(small) {
+        width: 100%;
+        margin-bottom: 10px;
       }
       i {
-        color: #2d62ed;
+        color: var(--main-color);
         margin: 0 10px;
       }
       h2 {
         margin: 0 8px 0 0;
-        color: #2d62ed;
+        color: var(--main-color);
         font-family: $font-family-base;
         font-weight: $font-semi-bold;
         font-size: 14px;
@@ -71,8 +69,8 @@ h2 {
         margin: 0 10px;
       }
       &:nth-child(2) {
-        color: #2d62ed;
-        background-color: #2d62ed4d;
+        color: var(--main-color);
+        background-color: var(--main-color) 4d;
         padding: 5px;
         border-radius: 10px;
         margin: 0 10px;
@@ -93,8 +91,8 @@ h2 {
       transition: 0.3s;
       cursor: pointer;
       &:hover {
-        color: #2d62ed;
-        background-color: #2d62ed4d;
+        color: var(--main-color);
+        background-color: var(--main-color) 4d;
         // padding: 5px;
         border-radius: 10px;
         // margin: 0 10px;
@@ -112,10 +110,8 @@ h2 {
   }
 }
 .content {
-  @media screen and (max-width: 576px) {
-    & {
-      justify-content: center !important;
-    }
+  @include breakpoint(small) {
+    justify-content: center !important;
   }
   .url-nav {
     h1 {
@@ -152,10 +148,8 @@ h2 {
 }
 .main-content {
   .row {
-    @media screen and (max-width: 576px) {
-      & {
-        flex-direction: column-reverse;
-      }
+    @include breakpoint(small) {
+      flex-direction: column-reverse;
     }
     .head {
       .ball-online {
@@ -187,7 +181,7 @@ h2 {
       }
       .offer {
         padding: 3px 10px;
-        background-color: #2d62ed;
+        background-color: var(--main-color);
         border-radius: 10px;
         text-align: center;
         h2 {
@@ -298,12 +292,12 @@ h2 {
           [class*="mat-elevation-z"]
         ) {
         box-shadow: 0 0 10px #ddd !important;
-        @media screen and (max-width: 576px) {
+        @include breakpoint(small) {
           font-size: 10px;
         }
       }
       ::ng-deep .mat-button-toggle-checked {
-        background-color: #2d62ed !important;
+        background-color: var(--main-color) !important;
         color: #ffffff;
       }
 
@@ -342,7 +336,7 @@ h2 {
     }
   }
 
-  @media screen and (min-width: 576px) {
+  @include breakpoint-up(small) {
     .option-sec {
       position: sticky;
       top: 13rem;
@@ -382,7 +376,7 @@ h2 {
       cursor: pointer;
       color: #9d9d9d;
       &:hover {
-        color: #2d62ed;
+        color: var(--main-color);
       }
     }
   }
@@ -402,7 +396,7 @@ h2 {
       height: 10px;
       border-radius: 10px;
       .progress-bar {
-        background-color: #2d62ed;
+        background-color: var(--main-color);
       }
     }
   }

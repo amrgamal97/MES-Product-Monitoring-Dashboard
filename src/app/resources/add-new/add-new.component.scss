@@ -1,4 +1,5 @@
 @use "../../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/breakpoints" as *;
 
 .head {
   .title {
@@ -29,7 +30,7 @@
   font-weight: $font-semi-bold;
 }
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
-  background-color: #2d62ed;
+  background-color: var(--main-color);
 }
 .example-form {
   display: flex;
@@ -38,9 +39,7 @@
   margin: 70px 0;
   gap: 50px;
   flex-wrap: wrap;
-}
-@media screen and (max-width: 576px) {
-  .example-form {
+  @include breakpoint(small) {
     gap: 0;
   }
 }

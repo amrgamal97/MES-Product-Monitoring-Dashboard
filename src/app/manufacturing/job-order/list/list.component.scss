@@ -1,4 +1,5 @@
 @use "../../../../assets/sass/utilities/fonts" as *;
+@use "../../../../assets/sass/utilities/breakpoints" as *;
 
 table {
   width: 100%;
@@ -8,7 +9,7 @@ table {
     margin: 0;
   }
   .active {
-    color: #2d62ed;
+    color: var(--main-color);
   }
   img {
     box-shadow: 0 0 10px #ddd;
@@ -115,13 +116,13 @@ table th {
   }
 }
 
-@media screen and (max-width: 991px) {
+@include breakpoint(large) {
   .mat-cell,
   .mat-header-cell {
     padding-right: 30px;
   }
 }
-@media screen and (min-width: 991px) {
+@include breakpoint-up(large) {
   .mat-cell {
     padding-right: 0 10px;
   }

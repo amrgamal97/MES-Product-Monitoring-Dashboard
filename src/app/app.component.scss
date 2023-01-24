@@ -5,9 +5,9 @@ mat-drawer-container {
 
   mat-drawer {
     width: 190px;
-    background-color: #2d62ed;
+    background-color: var(--main-color);
   }
 }
 .main-content {
-  background-color: #f4f7fe !important;
+  background-color: var(--background-color) !important;
 }

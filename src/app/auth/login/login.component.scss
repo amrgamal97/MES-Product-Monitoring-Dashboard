@@ -1,15 +1,17 @@
+@use "../../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/breakpoints" as *;
 .title-sec {
   width: 100%;
   margin: 0;
   .col-md-8 {
     background: url("../../../../src/assets/img/platform.svg") 0% 0% no-repeat,
-      linear-gradient(61deg, #2d62ed 0%, #0043d9 100%) 0% 0% no-repeat;
+      linear-gradient(61deg, var(--main-color) 0%, #0043d9 100%) 0% 0% no-repeat;
     min-height: 100vh;
-    @media screen and (max-width: 767px) {
-      & {
-        min-height: 70vh;
-      }
+
+    @include breakpoint(small) {
+      min-height: 70vh;
     }
+
     background-size: cover;
     .info {
       max-width: 400px;
@@ -60,7 +62,7 @@
   h1 {
     font: normal normal normal 38px/45px Montserrat;
     letter-spacing: 0px;
-    color: #2d62ed;
+    color: var(--main-color);
     opacity: 1;
   }
   form {
@@ -71,7 +73,7 @@
     input {
       display: block;
       margin: 15px;
-      border: 1px solid #2d62ed;
+      border: 1px solid var(--main-color);
       border-radius: 50px;
       /* font-size: 15px; */
       height: 50px;
@@ -85,9 +87,9 @@
     button {
       width: 200px !important;
       border-radius: 50px !important;
-      border: 1px solid #2d62ed;
+      border: 1px solid var(--main-color);
       color: #ffffff;
-      background-color: #2d62ed;
+      background-color: var(--main-color);
     }
     .mat-button-disabled {
       opacity: 0.5;
@@ -102,7 +104,7 @@
     /* right: 50%; */
     width: 100%;
     position: absolute;
-    font-family: Montserrat;
+    font-family: $font-family-base;
     font-weight: bold;
   }
   mat-card {
@@ -113,7 +115,7 @@
     max-width: 16rem;
   }
   mat-expansion-panel {
-    background-color: #2d62ed;
+    background-color: var(--main-color);
     margin-top: 35px;
   }
   mat-panel-title.mat-expansion-panel-header-title {

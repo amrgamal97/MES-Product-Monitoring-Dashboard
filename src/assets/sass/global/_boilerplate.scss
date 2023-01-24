@@ -1,4 +1,4 @@
-@use "../utilities/fonts" as f;
+@use "../utilities/fonts" as *;
 
 html {
   box-sizing: border-box;
@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: f.$font-family-base;
+  font-family: $font-family-base;
   margin: 0;
   padding: 0;
 }

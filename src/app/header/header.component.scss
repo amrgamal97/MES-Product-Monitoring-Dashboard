@@ -5,7 +5,7 @@ mat-toolbar {
   z-index: 999;
   top: 0;
   mat-toolbar-row {
-    background-color: #2d62ed;
+    background-color: var(--main-color);
     mat-icon {
       color: #ffffff;
     }

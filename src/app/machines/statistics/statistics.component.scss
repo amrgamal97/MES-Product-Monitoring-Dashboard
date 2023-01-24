@@ -1,4 +1,6 @@
 @use "../../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/breakpoints" as *;
+
 $large: 991px;
 $med: 767px;
 $small: 576px;
@@ -47,7 +49,7 @@ $small: 576px;
       cursor: pointer;
       color: #9d9d9d;
       &:hover {
-        color: #2d62ed;
+        color: var(--main-color);
       }
     }
   }
@@ -67,7 +69,7 @@ $small: 576px;
       height: 10px;
       border-radius: 10px;
       .progress-bar {
-        background-color: #2d62ed;
+        background-color: var(--main-color);
       }
     }
   }
@@ -124,12 +126,12 @@ $small: 576px;
         [class*="mat-elevation-z"]
       ) {
       box-shadow: 0 0 10px #ddd !important;
-      @media screen and (max-width: 576px) {
+      @include breakpoint(small) {
         font-size: 10px;
       }
     }
     ::ng-deep .mat-button-toggle-checked {
-      background-color: #2d62ed !important;
+      background-color: var(--main-color) !important;
       color: #ffffff;
     }
 

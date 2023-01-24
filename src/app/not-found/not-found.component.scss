@@ -1,0 +1,16 @@
+@use "../../assets/sass/utilities/fonts" as *;
+
+main {
+  height: calc(100vh - 97px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img {
+    margin: 5rem 0;
+    width: 250px;
+  }
+  h1 {
+    font-family: $font-family-base;
+    font-weight: 500;
+  }
+}

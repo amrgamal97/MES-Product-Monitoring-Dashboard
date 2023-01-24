@@ -1,21 +1,23 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { GuardGuard } from './guard/guard.guard';
-// import { MainComponent } from './dashboard/main/main.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-// import { WelcomeComponent } from './welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginGuardGuard } from './login-guard.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent, canActivate: [LoginGuardGuard] },
   {
     path: 'login',
     component: LoginComponent,
     data: { animationState: 'Login' },
+    canActivate: [LoginGuardGuard],
   },
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [LoginGuardGuard],
   },
   {
     path: 'dashboard',
@@ -46,6 +48,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./machines/machines.module').then((e) => e.MachinesModule),
     canActivate: [GuardGuard],
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: NotFoundComponent,
+  },
+  {
+    path: '#/**',
+    pathMatch: 'full',
+    component: NotFoundComponent,
   },
 ];
 

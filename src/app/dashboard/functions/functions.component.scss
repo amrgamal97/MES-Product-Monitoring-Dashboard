@@ -1,4 +1,5 @@
 @use "../../../assets/sass/utilities/fonts" as *;
+@use "../../../assets/sass/utilities/breakpoints" as *;
 $med: 767px;
 $lg: 1200px;
 
@@ -20,6 +21,12 @@ $lg: 1200px;
   font-family: $font-family-base;
   font-weight: 700;
   position: relative;
+  @include breakpoint(large) {
+    .mat-cell,
+    .mat-header-cell {
+      padding-right: 65px;
+    }
+  }
   &::before {
     // content: "";
     width: 10px;
@@ -31,13 +38,7 @@ $lg: 1200px;
   }
 }
 
-@media screen and (max-width: $lg) {
-  .mat-cell,
-  .mat-header-cell {
-    padding-right: 65px;
-  }
-}
-@media screen and (min-width: $lg) {
+@include breakpoint-up(large) {
   .mat-cell {
     padding-right: 0 10px;
   }
@@ -58,11 +59,11 @@ $lg: 1200px;
 }
 table td {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family-base;
   font-weight: $font-semi;
 }
 table th {
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family-base;
   font-weight: bold;
 }

@@ -37,7 +37,7 @@ $small: 576px;
         cursor: pointer;
         color: #9d9d9d;
         &:hover {
-          color: #2d62ed;
+          color: var(--main-color);
         }
       }
     }
@@ -57,7 +57,7 @@ $small: 576px;
         height: 10px;
         border-radius: 10px;
         .progress-bar {
-          background-color: #2d62ed;
+          background-color: var(--main-color);
         }
       }
     }
@@ -116,14 +116,14 @@ $small: 576px;
       // overflow: hidden;
       &:hover,
       &.active {
-        color: #2d62ed;
+        color: var(--main-color);
       }
       &::before,
       .active {
         content: "";
         position: absolute;
         bottom: -10px;
-        background-color: #2d62ed;
+        background-color: var(--main-color);
         height: 2px;
         width: 100%;
         right: 0;
@@ -134,7 +134,7 @@ $small: 576px;
         content: "";
         position: absolute;
         bottom: -10px;
-        background-color: #2d62ed;
+        background-color: var(--main-color);
         height: 2px;
         width: 100%;
         right: 0;
@@ -153,7 +153,7 @@ $small: 576px;
     .notif-sec {
       .info {
         h2 {
-          color: #00d1de;
+          color: var(--sec-color);
           font-family: $font-family-base;
           font-weight: bold;
           position: relative;
@@ -163,7 +163,7 @@ $small: 576px;
             width: 8px;
             height: 8px;
             left: -24px;
-            background-color: #00d1de;
+            background-color: var(--sec-color);
             border-radius: 50%;
             position: absolute;
             bottom: 12px;
@@ -173,7 +173,7 @@ $small: 576px;
     }
     .info {
       h2 {
-        color: #ec5967;
+        color: var(--red-sec-color);
         font-family: $font-family-base;
         font-weight: bold;
         position: relative;
@@ -183,7 +183,7 @@ $small: 576px;
           width: 8px;
           height: 8px;
           left: -24px;
-          background-color: #ec5967;
+          background-color: var(--red-sec-color);
           border-radius: 50%;
           position: absolute;
           bottom: 12px;
