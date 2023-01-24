@@ -1,14 +1,14 @@
+import { animator } from './animations';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, DoCheck, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router, RouterOutlet } from '@angular/router';
-// import { animatingRouts } from './animating-routes';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  // animations: [animatingRouts],
+  animations: [animator],
 })
 export class AppComponent implements OnInit, DoCheck {
   navControl: boolean = false;
