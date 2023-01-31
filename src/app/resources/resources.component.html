@@ -55,11 +55,17 @@
     <button
       mat-raised-button
       color="primary"
-      style="background-color: #2d62ed; width: 160px; height: 35px"
+      style="
+        background-color: #2d62ed;
+        width: 160px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+      "
       class="add"
       (click)="addData()"
     >
-      <span>+</span> ADD NEW
+      <span>+ </span> ADD NEW
     </button>
     <input type="text" placeholder="Search by Material Name - Type" />
   </div>
