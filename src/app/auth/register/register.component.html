@@ -3,19 +3,7 @@
     <div class="info">
       <h1>WELCOME TO FMS</h1>
       <p>We're Glad To Have You Join Us.</p>
-      <button
-        mat-stroked-button
-        color="black"
-        style="
-          border: 3px solid #ffffff;
-          border-radius: 20px;
-          padding: 0 30px;
-          color: #ffffff;
-          font-weight: bold;
-          background-color: #0043d9;
-        "
-        routerLink="/login"
-      >
+      <button mat-stroked-button color="black" routerLink="/login">
         GOT AN ACCOUNT? SIGN IN
       </button>
     </div>
@@ -39,7 +27,6 @@
         formControlName="email"
       />
 
-      <!-- <span>  </span> -->
       <input
         type="password"
         name=""
@@ -57,8 +44,6 @@
       <button type="submit" mat-raised-button [disabled]="myForm.invalid">
         REGISTER
       </button>
-      <!-- {{ myForm.status }} -->
-      <!-- </div>  -->
       <div>
         <mat-card *ngIf="email.invalid && email.dirty && email.touched">
           <mat-card-content
@@ -89,12 +74,6 @@
           <mat-card-content>Password Not Matched !</mat-card-content>
         </mat-card>
       </div>
-
-      <!-- <div>
-          <mat-card *ngIf="myForm.valid">
-            <mat-card-content>No Users Found! Try To Sign Up</mat-card-content>
-          </mat-card>
-        </div> -->
     </form>
   </div>
 </div>
