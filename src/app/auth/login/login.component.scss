@@ -110,9 +110,8 @@
   mat-card {
     transition: 0.3s;
     color: red;
-    position: absolute;
-    bottom: -6rem;
-    max-width: 16rem;
+    top: 1rem;
+    max-width: 100%;
   }
   mat-expansion-panel {
     background-color: var(--main-color);

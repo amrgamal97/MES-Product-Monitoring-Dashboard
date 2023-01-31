@@ -9,7 +9,7 @@
 <div class="content">
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab label="Item Cataloge">
-      <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
+      <form class="example-form" [formGroup]="form" style="margin: 35px 0 0 0">
         <mat-form-field class="example-full-width">
           <mat-label>Item Code</mat-label>
           <input matInput placeholder="Ex. 41293" formControlName="item" />
@@ -39,26 +39,25 @@
       </form>
       <br />
       <br />
-      <br />
       <div class="btns text-center">
         <button
           class="btn btn-danger"
           style="margin-right: 15px"
           (click)="out()"
         >
-          CANCEL
+          <h2>CANCEL</h2>
         </button>
         <button
           class="btn btn-primary"
           [disabled]="form.invalid"
           (click)="addNew()"
         >
-          ADD NEW
+          <h2>ADD NEW</h2>
         </button>
       </div>
     </mat-tab>
     <mat-tab label="Product Cataloge">
-      <form class="example-form" [formGroup]="form" style="margin: 50px 0 0 0">
+      <form class="example-form" [formGroup]="form" style="margin: 35px 0 0 0">
         <mat-form-field class="example-full-width">
           <mat-label>Product ID</mat-label>
           <input matInput placeholder="Ex. 49120" formControlName="item" />
@@ -88,21 +87,20 @@
 
       <br />
       <br />
-      <br />
       <div class="btns text-center">
         <button
           class="btn btn-danger"
           style="margin-right: 15px"
           (click)="out()"
         >
-          CANCEL
+          <h2>CANCEL</h2>
         </button>
         <button
           class="btn btn-primary"
           [disabled]="form.invalid"
           (click)="addNew2()"
         >
-          ADD NEW
+          <h2>ADD NEW</h2>
         </button>
       </div>
     </mat-tab>

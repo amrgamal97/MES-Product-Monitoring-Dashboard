@@ -1,14 +1,14 @@
 @use "../../../assets/sass/utilities/fonts" as *;
 @use "../../../assets/sass/utilities/breakpoints" as *;
 
+h2 {
+  font-size: 14px;
+  font-weight: $font-semi-bold;
+  font-family: $font-family-base;
+  margin: 0;
+}
 .head {
   .title {
-    h1 {
-      font-size: 14px;
-      font-weight: $font-semi-bold;
-      font-family: $font-family-base;
-      margin: 0;
-    }
     img {
       margin: 0 10px;
     }

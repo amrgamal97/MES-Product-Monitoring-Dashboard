@@ -2,6 +2,15 @@
 $large: 991px;
 $med: 767px;
 $small: 576px;
+
+%mainBox {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgb(33, 37, 41, 0.15);
+  padding: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 0.375rem;
+}
+
 .main > h1 {
   margin: 16px 12px;
 }
@@ -9,6 +18,7 @@ $small: 576px;
   gap: 20px;
   justify-content: center;
   .total-production {
+    @extend %mainBox;
     border-radius: 10px !important;
     .info {
       img {
@@ -63,6 +73,7 @@ $small: 576px;
     }
   }
   .performance {
+    @extend %mainBox;
     .info {
       img {
         margin: 0px 10px;
@@ -144,8 +155,11 @@ $small: 576px;
   }
 }
 
-.alerts {
+.current-activity-sec {
   border-radius: 10px !important;
+  .current-activity-box {
+    @extend %mainBox;
+  }
   .mat-tab-group {
     margin-bottom: 48px;
   }

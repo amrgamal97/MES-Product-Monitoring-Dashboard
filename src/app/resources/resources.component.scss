@@ -6,11 +6,23 @@
   justify-content: center;
 }
 
+%mainBox {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgb(33, 37, 41, 0.15);
+  padding: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 0.375rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
 .header {
   background-color: #ffffff;
 }
 .factories {
-  align-items: baseline;
+  @extend %mainBox;
   .name {
     display: flex;
     justify-content: space-between;
@@ -109,6 +121,9 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+    button {
+      font-family: $font-family-base;
+    }
     input {
       background-color: #ffffff;
       padding: 5px;

@@ -112,7 +112,7 @@ export class DashboardComponent implements OnInit {
       stroke: {
         lineCap: 'round',
       },
-      series: [68],
+      series: [48],
       plotOptions: {
         radialBar: {
           track: {
@@ -139,7 +139,7 @@ export class DashboardComponent implements OnInit {
         },
       },
       fill: {
-        colors: ['#00D1DE'],
+        colors: ['#FB7644'],
       },
 
       labels: [''],
