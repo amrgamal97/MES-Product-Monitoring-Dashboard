@@ -2,7 +2,7 @@
 <div class="row title-sec">
   <div class="col-md-8 col-sm-12">
     <div class="info">
-      <h1>WELCOME TO FMS</h1>
+      <h1>WELCOME TO MES</h1>
       <p>
         Ask the admain to create an account for you to start viewing our
         Dashboards.
@@ -26,8 +26,6 @@
   </div>
   <div class="col-md-4 col-sm-12 login-sec">
     <h1>MES</h1>
-    <!-- <div class="logo"></div> -->
-    <!-- <div class="login-system"> -->
     <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
       <input
         type="email"
@@ -36,8 +34,6 @@
         placeholder="EMAIL"
         formControlName="email"
       />
-
-      <!-- <span>  </span> -->
       <input
         type="password"
         name=""
@@ -48,8 +44,6 @@
       <button type="submit" mat-raised-button [disabled]="myForm.invalid">
         LOGIN
       </button>
-      <!-- {{ myForm.status }} -->
-      <!-- </div>  -->
       <div>
         <mat-card *ngIf="email.invalid && email.dirty && email.touched">
           <mat-card-content
@@ -63,8 +57,8 @@
             <mat-panel-title> Hint For Quick Login 🙄 </mat-panel-title>
           </mat-expansion-panel-header>
           <p>
-            Remember it's recommended to create your own account, however,
-            here's a hint to quick login
+            Remember it's always recommended to create your own account,
+            however, use these info to quick login.
           </p>
           <p>Email: 3mrgamal@gmail.com</p>
           <p>Password: 123123</p>
@@ -73,4 +67,3 @@
     </form>
   </div>
 </div>
-<!-- </div> -->

@@ -1,7 +1,7 @@
 <div class="row title-sec">
   <div class="col-md-8 col-sm-12">
     <div class="info">
-      <h1>WELCOME TO FMS</h1>
+      <h1>WELCOME TO MES</h1>
       <p>We're Glad To Have You Join Us.</p>
       <button mat-stroked-button color="black" routerLink="/login">
         GOT AN ACCOUNT? SIGN IN
@@ -19,6 +19,9 @@
         placeholder="USERNAME"
         formControlName="username"
       />
+      <h3 *ngIf="username.invalid && username.dirty && username.touched">
+        Username Must Be Minimum of 3 Characters !
+      </h3>
       <input
         type="email"
         name=""
@@ -26,7 +29,9 @@
         placeholder="EMAIL"
         formControlName="email"
       />
-
+      <h3 *ngIf="email.invalid && email.dirty && email.touched">
+        Please enter a valid email address !
+      </h3>
       <input
         type="password"
         name=""
@@ -34,6 +39,9 @@
         placeholder="PASSWORD"
         formControlName="password"
       />
+      <h3 *ngIf="password.invalid && password.dirty && password.touched">
+        Password Must Be Minimum of 5 characters!
+      </h3>
       <input
         type="password"
         name=""
@@ -41,39 +49,10 @@
         placeholder="CONFIRM PASSWORD"
         formControlName="confirmPassword"
       />
+      <h3 *ngIf="myForm.errors">Password Not Matched !</h3>
       <button type="submit" mat-raised-button [disabled]="myForm.invalid">
         REGISTER
       </button>
-      <div>
-        <mat-card *ngIf="email.invalid && email.dirty && email.touched">
-          <mat-card-content
-            >Please enter a valid email address !</mat-card-content
-          >
-        </mat-card>
-      </div>
-      <div>
-        <mat-card
-          *ngIf="password.invalid && password.dirty && password.touched"
-        >
-          <mat-card-content
-            >Password Must Be Minimum of 5 characters!</mat-card-content
-          >
-        </mat-card>
-      </div>
-      <div>
-        <mat-card
-          *ngIf="username.invalid && username.dirty && username.touched"
-        >
-          <mat-card-content
-            >Username Must Be Minimum of 3 Characters !</mat-card-content
-          >
-        </mat-card>
-      </div>
-      <div>
-        <mat-card *ngIf="myForm.errors">
-          <mat-card-content>Password Not Matched !</mat-card-content>
-        </mat-card>
-      </div>
     </form>
   </div>
 </div>
